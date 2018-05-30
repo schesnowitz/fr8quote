@@ -8,7 +8,7 @@ run.config:
     - pkgconf
     - libxml2
     - libxslt
-
+    - ImageMagick
 
 
 deploy.config:
