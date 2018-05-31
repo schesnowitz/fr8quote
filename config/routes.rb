@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :shipper_receivers
   resources :shipments
   require 'sidekiq/web'
   require 'sidekiq/cron/web'

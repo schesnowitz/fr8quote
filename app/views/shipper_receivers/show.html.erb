@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shipper_receiver.name %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @shipper_receiver.street %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @shipper_receiver.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @shipper_receiver.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @shipper_receiver.zip %>
+</p>
+
+<p>
+  <strong>Contact person:</strong>
+  <%= @shipper_receiver.contact_person %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @shipper_receiver.notes %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @shipper_receiver.email %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @shipper_receiver.url %>
+</p>
+
+<%= link_to 'Edit', edit_shipper_receiver_path(@shipper_receiver) %> |
+<%= link_to 'Back', shipper_receivers_path %>
