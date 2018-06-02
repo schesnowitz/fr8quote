@@ -1,5 +1,10 @@
 class Shipment < ApplicationRecord
-  Commodity =
+
+  has_many :shipperizations
+  has_many :shipper_receivers, through: :shipperizations
+
+
+  Commodity = 
 [
   "Household Goods",
   "Metal - sheets, coils, rolls",

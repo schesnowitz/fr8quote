@@ -15,16 +15,20 @@ class ShipmentsController < ApplicationController
   # GET /shipments/new
   def new
     @shipment = Shipment.new
+    @shipper_receivers = ShipperReceiver.all
   end
 
   # GET /shipments/1/edit
   def edit
+    @shipper_receivers = ShipperReceiver.all
   end
 
   # POST /shipments
   # POST /shipments.json
   def create
+
     @shipment = Shipment.new(shipment_params)
+    @shipper_receivers = @shipment.shipper_receivers.build
 
     respond_to do |format|
       if @shipment.save
@@ -40,6 +44,7 @@ class ShipmentsController < ApplicationController
   # PATCH/PUT /shipments/1
   # PATCH/PUT /shipments/1.json
   def update
+    @shipper_receivers = @shipment.shipper_receivers.build
     respond_to do |format|
       if @shipment.update(shipment_params)
         format.html { redirect_to @shipment, notice: 'Shipment was successfully updated.' }
@@ -134,7 +139,8 @@ class ShipmentsController < ApplicationController
                                         :broker_rep_cell,
                                         :broker_after_hours_instructions,
                                         :has_multiple_pd,
-                                        :vehcile_id
+                                        :vehcile_id, 
+                                        shipperization_ids: []
 
                                         )
     end

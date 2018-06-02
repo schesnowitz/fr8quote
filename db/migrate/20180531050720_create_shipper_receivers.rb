@@ -10,7 +10,7 @@ class CreateShipperReceivers < ActiveRecord::Migration[5.2]
       t.string :notes
       t.string :email
       t.string :url
-
+      t.string :telephone
       t.timestamps
     end
   end

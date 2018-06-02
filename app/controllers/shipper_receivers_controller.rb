@@ -69,6 +69,17 @@ class ShipperReceiversController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shipper_receiver_params
-      params.require(:shipper_receiver).permit(:name, :street, :city, :state, :zip, :contact_person, :notes, :email, :url)
+      params.require(:shipper_receiver).permit(
+      :name, 
+      :street, 
+      :city, 
+      :state, 
+      :zip, 
+      :contact_person, 
+      :notes, 
+      :email, 
+      :url,
+      :telephone
+      )
     end
 end
