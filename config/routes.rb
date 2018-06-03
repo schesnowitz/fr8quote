@@ -2,10 +2,15 @@ Rails.application.routes.draw do
 
 
 
+  resources :shipment_pickups
+  resources :shipments do
+    get 'shipment_addresses', to: 'shipments#shipment_addresses' 
+  end
   resources :shipper_receivers
-  resources :shipments
+  
   require 'sidekiq/web'
   require 'sidekiq/cron/web'
+  
   
 
 

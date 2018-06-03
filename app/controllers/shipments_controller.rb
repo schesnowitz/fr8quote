@@ -1,5 +1,5 @@
 class ShipmentsController < ApplicationController
-  before_action :set_shipment, only: [:show, :edit, :update, :destroy]
+  before_action :set_shipment, only: [:show, :edit, :update, :destroy] 
 
   # GET /shipments
   # GET /shipments.json
@@ -16,6 +16,7 @@ class ShipmentsController < ApplicationController
   def new
     @shipment = Shipment.new
     @shipper_receivers = ShipperReceiver.all
+    @shipment_pickups = ShipmentPickup.new
   end
 
   # GET /shipments/1/edit
@@ -23,16 +24,18 @@ class ShipmentsController < ApplicationController
     @shipper_receivers = ShipperReceiver.all
   end
 
+
+
   # POST /shipments
   # POST /shipments.json
   def create
 
     @shipment = Shipment.new(shipment_params)
     @shipper_receivers = @shipment.shipper_receivers.build
-
+    @shipment_pickups = @shipment.shipment_pickups.build
     respond_to do |format|
-      if @shipment.save
-        format.html { redirect_to @shipment, notice: 'Shipment was successfully created.' }
+      if @shipment.save 
+        format.html { redirect_to shipment_shipment_addresses_path(@shipment), notice: 'Shipment was successfully created.' }
         format.json { render :show, status: :created, location: @shipment }
       else
         format.html { render :new }
@@ -65,6 +68,12 @@ class ShipmentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def shipment_addresses
+    @shipment = Shipment.find(params[:shipment_id])
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

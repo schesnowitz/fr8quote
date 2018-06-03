@@ -2,8 +2,8 @@ class Shipment < ApplicationRecord
 
   has_many :shipperizations
   has_many :shipper_receivers, through: :shipperizations
-
-
+  has_many :shipment_pickups, dependent: :destroy
+  accepts_nested_attributes_for :shipment_pickups
   Commodity = 
 [
   "Household Goods",

@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shipment Pickups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Name</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Contact person</th>
+      <th>Notes</th>
+      <th>Shipment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shipment_pickups.each do |shipment_pickup| %>
+      <tr>
+        <td><%= shipment_pickup.date %></td>
+        <td><%= shipment_pickup.name %></td>
+        <td><%= shipment_pickup.street %></td>
+        <td><%= shipment_pickup.city %></td>
+        <td><%= shipment_pickup.state %></td>
+        <td><%= shipment_pickup.zip %></td>
+        <td><%= shipment_pickup.contact_person %></td>
+        <td><%= shipment_pickup.notes %></td>
+        <td><%= shipment_pickup.shipment_id %></td>
+        <td><%= link_to 'Show', shipment_pickup %></td>
+        <td><%= link_to 'Edit', edit_shipment_pickup_path(shipment_pickup) %></td>
+        <td><%= link_to 'Destroy', shipment_pickup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shipment Pickup', new_shipment_pickup_path %>

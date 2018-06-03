@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_02_000134) do
+ActiveRecord::Schema.define(version: 2018_06_02_202914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,20 @@ ActiveRecord::Schema.define(version: 2018_06_02_000134) do
     t.string "theme_color"
     t.boolean "hidden_sidebar", default: false
     t.boolean "boxed_content", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shipment_pickups", force: :cascade do |t|
+    t.date "date"
+    t.string "name"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "contact_person"
+    t.string "notes"
+    t.integer "shipment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,23 @@
+
+<%= f.simple_fields_for(@shipment_pickups) do |sp| %>
+  <%= sp.error_notification %>
+  <%= sp.error_notification message: sp.object.errors[:base].to_sentence if sp.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+  <br><br>
+    <%= sp.date_field :date, input_html: { class: 'form-control form-control-sm' } %> 
+    <br><br>
+    <%= sp.input :name, label: false, placeholder: "Pick Up Company Name", input_html: { class: 'form-control form-control-sm' } %>
+    <%= sp.input :street, label: false, placeholder: "Street", input_html: { class: 'form-control form-control-sm' } %>
+    <%= sp.input :city, label: false, placeholder: "City", input_html: { class: 'form-control form-control-sm' } %>
+    <%= sp.input :state, label: false, placeholder: "State | Provence", input_html: { class: 'form-control form-control-sm' } %>
+    <%= sp.input :zip, label: false, placeholder: "Postal Code", input_html: { class: 'form-control form-control-sm' } %>
+    <%= sp.input :contact_person, label: false, placeholder: "Contact", input_html: { class: 'form-control form-control-sm' } %>
+    <%= sp.input :notes, label: false, placeholder: "Pick Up Company Notes", input_html: { class: 'form-control form-control-sm' } %>
+    <%= sp.input :shipment_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= sp.button :submit %>
+  </div>
+<% end %>

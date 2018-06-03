@@ -14,6 +14,7 @@ class ShipperReceiversController < ApplicationController
 
   # GET /shipper_receivers/new
   def new
+    @shipment = Shipment.find(params[:shipment_id])
     @shipper_receiver = ShipperReceiver.new
   end
 
@@ -60,6 +61,8 @@ class ShipperReceiversController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

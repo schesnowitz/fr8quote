@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @shipment_pickup.date %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shipment_pickup.name %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @shipment_pickup.street %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @shipment_pickup.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @shipment_pickup.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @shipment_pickup.zip %>
+</p>
+
+<p>
+  <strong>Contact person:</strong>
+  <%= @shipment_pickup.contact_person %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @shipment_pickup.notes %>
+</p>
+
+<p>
+  <strong>Shipment:</strong>
+  <%= @shipment_pickup.shipment_id %>
+</p>
+
+<%= link_to 'Edit', edit_shipment_pickup_path(@shipment_pickup) %> |
+<%= link_to 'Back', shipment_pickups_path %>
