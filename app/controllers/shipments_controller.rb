@@ -16,12 +16,13 @@ class ShipmentsController < ApplicationController
   def new
     @shipment = Shipment.new
     @shipper_receivers = ShipperReceiver.all
-    @shipment_pickups = ShipmentPickup.new
+
   end
 
   # GET /shipments/1/edit
   def edit
     @shipper_receivers = ShipperReceiver.all
+
   end
 
 
@@ -29,9 +30,8 @@ class ShipmentsController < ApplicationController
   # POST /shipments
   # POST /shipments.json
   def create
-
     @shipment = Shipment.new(shipment_params)
-    @shipper_receivers = @shipment.shipper_receivers.build
+
     @shipment_pickups = @shipment.shipment_pickups.build
     respond_to do |format|
       if @shipment.save 
@@ -47,7 +47,7 @@ class ShipmentsController < ApplicationController
   # PATCH/PUT /shipments/1
   # PATCH/PUT /shipments/1.json
   def update
-    @shipper_receivers = @shipment.shipper_receivers.build
+
     respond_to do |format|
       if @shipment.update(shipment_params)
         format.html { redirect_to @shipment, notice: 'Shipment was successfully updated.' }
@@ -71,7 +71,12 @@ class ShipmentsController < ApplicationController
 
 
   def shipment_addresses
+
     @shipment = Shipment.find(params[:shipment_id])
+    @shipper_receivers = ShipperReceiver.all
+    # @shipper_receiver = @shipment.shipper_receivers.build
+    # @shipment_pickups = @shipment.shipment_pickups.build
+
   end
 
 
@@ -148,9 +153,24 @@ class ShipmentsController < ApplicationController
                                         :broker_rep_cell,
                                         :broker_after_hours_instructions,
                                         :has_multiple_pd,
-                                        :vehcile_id, 
+                                        :vehcile_id,
+                                        :shipper_receiver_id, 
+                                        shipment_pickups_attributes: 
+                                        # [:id, 
+                                        # :_destroy, 
+                                        # :date,
+                                        # :name,
+                                        # :street,
+                                        # :city,
+                                        # :state,
+                                        # :zip,
+                                        # :contact_person,
+                                        # :notes]
+                                        ShipmentPickup.attribute_names.map(&:to_sym).push(:_destroy),
                                         shipperization_ids: []
 
                                         )
     end
 end
+
+

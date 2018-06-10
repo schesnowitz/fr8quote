@@ -1,5 +1,9 @@
 
 <%= render 'form', shipment: @shipment %>
-
+<% @shipment.shipper_receivers.each do |sr| %>
+<%= sr.id %>
+<%= sr.name %>
+<% end %>
+<br>
 <%= link_to 'Show', @shipment %> |
 <%= link_to 'Back', shipments_path %>

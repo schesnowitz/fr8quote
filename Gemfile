@@ -65,3 +65,4 @@ gem 'font-awesome-sass', '~> 4.7.0'
 gem 'httparty', '~> 0.15.6'
 gem 'local_time', '~> 2.0'
 gem 'bootstrap', '~> 4.1.1'
+gem "cocoon" 

@@ -1,3 +1,3 @@
 class ShipmentPickup < ApplicationRecord
-  belongs_to :shipment
+  belongs_to :shipment, optional: true
 end

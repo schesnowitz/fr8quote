@@ -14,7 +14,6 @@
 
 
 
-
 //= require jquery3
 //= require popper
 //= require bootstrap
@@ -50,3 +49,4 @@
 //= require reload.js 
 //= require local-time.js 
 //= require masked.js 
+//= require cocoon

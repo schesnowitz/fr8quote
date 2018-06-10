@@ -3,7 +3,11 @@ class Shipment < ApplicationRecord
   has_many :shipperizations
   has_many :shipper_receivers, through: :shipperizations
   has_many :shipment_pickups, dependent: :destroy
-  accepts_nested_attributes_for :shipment_pickups
+
+  accepts_nested_attributes_for :shipment_pickups,
+                                allow_destroy: true,
+                                reject_if: proc{ |attribute| attribute['name'].blank? }
+  
   Commodity = 
 [
   "Household Goods",

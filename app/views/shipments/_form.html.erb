@@ -132,9 +132,48 @@
         </div>
       </div>
     </div>
+      <%= select_tag "shipper_receivers", 
+          options_for_select(@shipper_receivers.map{ |sr| [sr.name, sr.id, data: { url: shipper_receivers_path(sr) }]}), 
+          class: 'chosen-select' %> 
+
+      <%= f.simple_fields_for :shipment_pickups do |sp| %>
+      <%= sp.input :name %>
+      <% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody class='shipment_pickups'>
+      <%= f.simple_fields_for :shipment_pickups do |sp| %>
+        <%= render 'shipment_pickup_fields', f: sp %>
+      <% end %>
+  </tbody>
+</table>
+
+
+
     <div class="form-actions">
+
       <%= f.button :submit %>
+          <%= link_to_add_association 'Add Pickup Address', f, :shipment_pickups, class: 'btn btn-primary', data: { association_insertion_node: '.shipment_pickups', association_insertion_method: :append } %>
     </div>
   </div>
 </div>
 <% end %>
+
+
+<script>
+  $(function() {      
+      var dropValue = $("#shipper_receivers option:selected").text();
+      $('#shipment_shipment_pickups_attributes_0_name').val(dropValue); 
+    });
+  });
+</script>
