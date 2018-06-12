@@ -1,3 +1,4 @@
+<div data-turbolinks="false">
 <%= simple_form_for(@shipment) do |f| %>
 <%= f.error_notification %>
 <div class="card">
@@ -132,16 +133,14 @@
         </div>
       </div>
     </div>
-      <%= select_tag "shipper_receivers", 
-          options_for_select(@shipper_receivers.map{ |sr| [sr.name, sr.id, data: { url: shipper_receivers_path(sr) }]}), 
-          class: 'chosen-select' %> 
 
-      <%= f.simple_fields_for :shipment_pickups do |sp| %>
-      <%= sp.input :name %>
-      <% end %>
+
+
 <table>
   <thead>
     <tr>
+      <th></th>
+      <th>Selection</th>
       <th>Name</th>
       <th>Street</th>
       <th>City</th>
@@ -158,7 +157,9 @@
   </tbody>
 </table>
 
-
+    <%= select_tag "shipper_receivers", 
+          options_for_select(@shipper_receivers.map{ |sr| [sr.name, sr.id, data: { url: shipper_receivers_path(sr) }]}), 
+          class: 'chosen-select' %>
 
     <div class="form-actions">
 
@@ -168,12 +169,17 @@
   </div>
 </div>
 <% end %>
-
+</div>
 
 <script>
-  $(function() {      
-      var dropValue = $("#shipper_receivers option:selected").text();
-      $('#shipment_shipment_pickups_attributes_0_name').val(dropValue); 
+$("#shipper_receivers").change(function () {
+        var end = this.value;
+        console.log(this.value);
+        var firstDropVal = $('#pick').val();
     });
-  });
+
+</script>
+
+<script>
+
 </script>

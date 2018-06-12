@@ -1,7 +1,20 @@
-<tr class="nested-fields">
+<tr class="nested-fields" >
+
   <td>
-    <%= link_to_remove_association "remove address", f, class: 'btn btn-primary btn-xs' %>
+    <%= link_to_remove_association "remove address", f, class: 'btn btn-danger btn-xs' %>
   </td>
-  <td><%= f.input :name, label: false %></td>
-  <td><%= f.input :city, label: false %></td>
+
+
+  <td>
+    <%= select_tag "shipper_receivers", 
+          options_for_select(@shipper_receivers.map{ |sr| [sr.name, sr.id, data: { url: shipper_receivers_path(sr) }]}), 
+          class: 'chosen-select' %>
+  </td>   
+
+<td class="" autocomplete='on'>
+<%= f.input :name, label: false %>
+</td>
+  <td autocomplete='on'>
+  <%= f.input :city, label: false %>
+  </td>
 </tr> 
