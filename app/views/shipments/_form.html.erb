@@ -171,15 +171,13 @@
 <% end %>
 </div>
 
-<script>
-$("#shipper_receivers").change(function () {
-        var end = this.value;
-        console.log(this.value);
-        var firstDropVal = $('#pick').val();
-    });
-
-</script>
+<span id='shipper_receivers_val'></span>
 
 <script>
 
+
+  $(document).on("change", "#shipper_receivers", function() {
+    gfys = ($(this).find("option:selected").text());
+    $('#shipper_receivers_val').text(gfys); 
+});
 </script>
