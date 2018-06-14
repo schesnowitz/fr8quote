@@ -9,6 +9,12 @@
     <%= select_tag "shipper_receivers", 
           options_for_select(@shipper_receivers.map{ |sr| [sr.name, sr.id, data: { url: shipper_receivers_path(sr) }]}), 
           class: 'chosen-select' %>
+
+    <%= select_tag "shipper_receivers", 
+          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.street}", sr.id, data: { url: shipper_receivers_path(sr) }]}), 
+          class: 'chosen-select', :id => "sr_street"
+          %>
+
   </td>   
 
 <td class="" autocomplete='on'>
@@ -18,3 +24,27 @@
   <%= f.input :city, label: false %>
   </td>
 </tr> 
+
+
+<script>
+
+
+  $(document).on("change", "#shipper_receivers", function() {
+    gfys = ($(this).find("option:selected").text());
+    $('#shipper_receivers_val').text(gfys); 
+});
+
+  $(function() {      
+    $("#shipper_receivers").change(function() {  
+      $('#sr_street').val(this.value);   
+    street = ($('#sr_street').find("option:selected").text());
+    $('#shipper_receivers_val1').text(street);   
+    $("input[name*='name']").val(street);
+    
+    });
+  });
+
+
+
+
+</script>
