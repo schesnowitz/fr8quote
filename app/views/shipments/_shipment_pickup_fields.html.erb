@@ -8,43 +8,78 @@
   <td>
     <%= select_tag "shipper_receivers", 
           options_for_select(@shipper_receivers.map{ |sr| [sr.name, sr.id, data: { url: shipper_receivers_path(sr) }]}), 
-          class: 'chosen-select' %>
-
+          class: 'chosen_shipper_receivers' %>
+<br>
     <%= select_tag "shipper_receivers", 
-          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.street}", sr.id, data: { url: shipper_receivers_path(sr) }]}), 
-          class: 'chosen-select', :id => "sr_street"
+          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.street}", sr.id, data: { url: shipper_receivers_path(sr) }]}), :id => "sr_street"
           %>
-
+<br>
+    <%= select_tag "shipper_receivers", 
+          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.city}", sr.id, data: { url: shipper_receivers_path(sr) }]}), :id => "sr_city"
+          %>
+<br>    
+    <%= select_tag "shipper_receivers", 
+          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.state}", sr.id, data: { url: shipper_receivers_path(sr) }]}), :id => "sr_state"
+          %> 
+<br>
+    <%= select_tag "shipper_receivers", 
+          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.zip}", sr.id, data: { url: shipper_receivers_path(sr) }]}), :id => "sr_postal"
+          %>   
   </td>   
 
 <td class="" autocomplete='on'>
 <%= f.input :name, label: false %>
 </td>
+
+<td class="" autocomplete='on'>
+<%= f.input :street, label: false %>
+</td> 
+
   <td autocomplete='on'>
   <%= f.input :city, label: false %>
   </td>
+
+    <td autocomplete='on'>
+  <%= f.input :state, label: false %>
+  </td>
+  <td autocomplete='on'>
+  <%= f.input :zip, label: false %>
+  </td>
+
 </tr> 
 
 
 <script>
 
 
-  $(document).on("change", "#shipper_receivers", function() {
-    gfys = ($(this).find("option:selected").text());
-    $('#shipper_receivers_val').text(gfys); 
+  $(document).on("change", "#chosen_shipper_receivers0", function() {
+      $('#sr_street, #sr_city, #sr_state, #sr_postal').val(this.value);   
+
+    name = ($('#chosen_shipper_receivers0').find("option:selected").text());
+    $("input[name*='name']").val(name);  
+
+    street = ($('#sr_street').find("option:selected").text());
+    $("input[name*='street']").val(street);
+
+    city = ($('#sr_city').find("option:selected").text());
+    $("input[name*='city']").val(city);
+
+    state = ($('#sr_state').find("option:selected").text());
+    $("input[name*='state']").val(state); 
+
+    postal_code = ($('#sr_postal').find("option:selected").text());
+    $("input[name*='zip']").val(postal_code);
 });
 
-  $(function() {      
-    $("#shipper_receivers").change(function() {  
-      $('#sr_street').val(this.value);   
-    street = ($('#sr_street').find("option:selected").text());
-    $('#shipper_receivers_val1').text(street);   
-    $("input[name*='name']").val(street);
-    
-    });
-  });
 
 
-
+$( ".chosen_shipper_receivers" ).each(function( i ) {
+  $(this).attr('id', 'chosen_shipper_receivers' + i);
+  $(this).append('<select id=\"test' +i+'\"></select>');
+    var script=document.createElement('script');
+    script.type='text/javascript';
+// script.innerHTML=" alert('"+i+"');";
+    $(this).find('select').append(script);
+});
 
 </script>
