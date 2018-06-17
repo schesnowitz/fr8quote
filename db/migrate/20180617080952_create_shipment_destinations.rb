@@ -1,6 +1,6 @@
-class CreateShipmentPickups < ActiveRecord::Migration[5.2]
+class CreateShipmentDestinations < ActiveRecord::Migration[5.2]
   def change
-    create_table :shipment_pickups do |t|
+    create_table :shipment_destinations do |t|
       t.date :date
       t.string :name
       t.string :street
@@ -9,7 +9,7 @@ class CreateShipmentPickups < ActiveRecord::Migration[5.2]
       t.string :zip
       t.string :contact_person
       t.string :notes
-      t.integer :shipment_id
+      t.integer :shipment_id, index: true
 
       t.timestamps
     end

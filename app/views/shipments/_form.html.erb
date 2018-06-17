@@ -149,10 +149,20 @@
     </tr>
   </thead>
 
-  <tbody class='shipment_pickups'>
-      <%= f.simple_fields_for :shipment_pickups do |sp| %>
-        <%= render 'shipment_pickup_fields', f: sp %>
+  <tbody>
+
+  <div class='shipment_origins'>
+        <%= f.simple_fields_for :shipment_origins do |sp| %>
+        <%= render 'shipment_origin_fields', f: sp %>
       <% end %>
+  </div>
+
+    <div class='shipment_destinations'>
+        <%= f.simple_fields_for :shipment_destinations do |sd| %>
+        <%= render 'shipment_destination_fields', f: sd %>
+      <% end %>
+  </div>
+
   </tbody>
 </table>
 
@@ -161,7 +171,9 @@
     <div class="form-actions">
 
       <%= f.button :submit %>
-          <%= link_to_add_association 'Add Pickup Address', f, :shipment_pickups, class: 'btn btn-primary add_pickup_address', data: { association_insertion_node: '.shipment_pickups', association_insertion_method: :append } %>
+          <%= link_to_add_association 'Add Origin Address', f, :shipment_origins, class: 'btn btn-primary add_origin_address', data: { association_insertion_node: '.shipment_origins', association_insertion_method: :append } %>
+
+          <%= link_to_add_association 'Add Destination Address', f, :shipment_destinations, class: 'btn btn-success add_destination_address', data: { association_insertion_node: '.shipment_destinations', association_insertion_method: :append } %>
     </div>
   </div>
 </div>

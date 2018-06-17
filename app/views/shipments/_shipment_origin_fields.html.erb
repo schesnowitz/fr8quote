@@ -1,0 +1,56 @@
+<tr class="nested-fields" >
+
+  <td>
+    <%= link_to_remove_association "Remove Origin Address", f, class: 'btn btn-danger btn-xs' %>
+  </td>
+
+
+  <td>
+    <%= select_tag "shipper_receivers", 
+          options_for_select(@shipper_receivers.map{ |sr| [sr.name, sr.id, data: { url: shipper_receivers_path(sr) }]}), 
+          class: 'chosen_shipper_receivers' %>
+<br>
+<span class='hidden'>
+    <%= select_tag "shipper_receivers", 
+          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.street}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_origin_street", class: "sr_origin_street"
+          %>
+<br>
+    <%= select_tag "shipper_receivers", 
+          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.city}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_origin_city", class: "sr_origin_city"
+          %>
+<br>    
+    <%= select_tag "shipper_receivers", 
+          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.state}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_origin_state", class: "sr_origin_state"
+          %> 
+<br>
+    <%= select_tag "shipper_receivers", 
+          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.zip}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_origin_postal", class: "sr_origin_postal"
+          %>   
+ </span>         
+  </td>   
+
+<td class="" autocomplete='on'>
+<%= f.input :name, label: false, input_html: { class: 'input_name' }  %>
+</td>
+
+<td class="" autocomplete='on'>
+<%= f.input :street, label: false, input_html: { class: 'input_street' } %>
+</td> 
+
+  <td autocomplete='on'>
+  <%= f.input :city, label: false, input_html: { class: 'input_city' } %>
+  </td>
+
+    <td autocomplete='on'>
+  <%= f.input :state, label: false, input_html: { class: 'input_state' } %>
+  </td>
+  <td autocomplete='on'>
+  <%= f.input :zip, label: false, input_html: { class: 'input_postal' } %>
+  </td>
+
+</tr> 
+
+
+
+
+  <%= javascript_include_tag 'shipment_origins' %> 

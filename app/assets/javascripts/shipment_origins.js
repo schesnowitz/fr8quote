@@ -1,102 +1,102 @@
 $(function() {
-  // limits the number of categories
+
   
 
     $(document).on("change", "#chosen_shipper_receivers0", function() {
-      $('#sr_street0, #sr_city0, #sr_state0, #sr_postal0').val(this.value);   
+      $('#sr_origin_street0, #sr_origin_city0, #sr_origin_state0, #sr_origin_postal0').val(this.value);   
 
     name = ($('#chosen_shipper_receivers0').find("option:selected").text());
     $("#input_name0").val(name);  
 
-    street = ($('#sr_street0').find("option:selected").text());
+    street = ($('#sr_origin_street0').find("option:selected").text());
     $("#input_street0").val(street);
 
-    city = ($('#sr_city0').find("option:selected").text());
+    city = ($('#sr_origin_city0').find("option:selected").text());
     $("#input_city0").val(city);
 
-    state = ($('#sr_state0').find("option:selected").text());
+    state = ($('#sr_origin_state0').find("option:selected").text());
     $("#input_state0").val(state); 
 
-    postal_code = ($('#sr_postal0').find("option:selected").text());
+    postal_code = ($('#sr_origin_postal0').find("option:selected").text());
     $("#input_postal0").val(postal_code);
   });
 
   // ---------------
     $(document).on("change", "#chosen_shipper_receivers1", function() {
-      $('#sr_street1, #sr_city1, #sr_state1, #sr_postal1').val(this.value);   
+      $('#sr_origin_street1, #sr_origin_city1, #sr_origin_state1, #sr_origin_postal1').val(this.value);   
 
     name = ($('#chosen_shipper_receivers1').find("option:selected").text());
     $("#input_name1").val(name);  
 
-    street = ($('#sr_street1').find("option:selected").text());
+    street = ($('#sr_origin_street1').find("option:selected").text());
     $("#input_street1").val(street);
 
-    city = ($('#sr_city1').find("option:selected").text());
+    city = ($('#sr_origin_city1').find("option:selected").text());
     $("#input_city1").val(city);
 
-    state = ($('#sr_state1').find("option:selected").text());
+    state = ($('#sr_origin_state1').find("option:selected").text());
     $("#input_state1").val(state); 
 
-    postal_code = ($('#sr_postal1').find("option:selected").text());
+    postal_code = ($('#sr_origin_postal1').find("option:selected").text());
     $("#input_postal1").val(postal_code); 
   });
 
   // ---------------
     $(document).on("change", "#chosen_shipper_receivers2", function() {
-      $('#sr_street2, #sr_city2, #sr_state2, #sr_postal2').val(this.value);   
+      $('#sr_origin_street2, #sr_origin_city2, #sr_origin_state2, #sr_origin_postal2').val(this.value);   
 
     name = ($('#chosen_shipper_receivers2').find("option:selected").text());
     $("#input_name2").val(name);  
 
-    street = ($('#sr_street2').find("option:selected").text());
+    street = ($('#sr_origin_street2').find("option:selected").text());
     $("#input_street2").val(street);
 
-    city = ($('#sr_city2').find("option:selected").text());
+    city = ($('#sr_origin_city2').find("option:selected").text());
     $("#input_city2").val(city);
 
-    state = ($('#sr_state2').find("option:selected").text());
+    state = ($('#sr_origin_state2').find("option:selected").text());
     $("#input_state2").val(state); 
 
-    postal_code = ($('#sr_postal2').find("option:selected").text());
+    postal_code = ($('#sr_origin_postal2').find("option:selected").text());
     $("#input_postal2").val(postal_code); 
   });
   // ---------------
   $(document).on("change", "#chosen_shipper_receivers3", function() {
-      $('#sr_street3, #sr_city3, #sr_state3, #sr_postal3').val(this.value);   
+      $('#sr_origin_street3, #sr_origin_city3, #sr_origin_state3, #sr_origin_postal3').val(this.value);   
 
     name = ($('#chosen_shipper_receivers3').find("option:selected").text());
     $("#input_name3").val(name);  
 
-    street = ($('#sr_street3').find("option:selected").text());
+    street = ($('#sr_origin_street3').find("option:selected").text());
     $("#input_street3").val(street);
 
-    city = ($('#sr_city3').find("option:selected").text());
+    city = ($('#sr_origin_city3').find("option:selected").text());
     $("#input_city3").val(city);
 
-    state = ($('#sr_state3').find("option:selected").text());
+    state = ($('#sr_origin_state3').find("option:selected").text());
     $("#input_state3").val(state); 
 
-    postal_code = ($('#sr_postal3').find("option:selected").text());
+    postal_code = ($('#sr_origin_postal3').find("option:selected").text());
     $("#input_postal3").val(postal_code); 
   });
   // ---------------
 
   $(document).on("change", "#chosen_shipper_receivers4", function() {
-      $('#sr_street4, #sr_city4, #sr_state4, #sr_postal4').val(this.value);   
+      $('#sr_origin_street4, #sr_origin_city4, #sr_origin_state4, #sr_origin_postal4').val(this.value);   
 
     name = ($('#chosen_shipper_receivers4').find("option:selected").text());
     $("#input_name4").val(name);  
 
-    street = ($('#sr_street4').find("option:selected").text());
+    street = ($('#sr_origin_street4').find("option:selected").text());
     $("#input_street4").val(street);
 
-    city = ($('#sr_city4').find("option:selected").text());
+    city = ($('#sr_origin_city4').find("option:selected").text());
     $("#input_city4").val(city);
 
-    state = ($('#sr_state4').find("option:selected").text());
+    state = ($('#sr_origin_state4').find("option:selected").text());
     $("#input_state4").val(state); 
 
-    postal_code = ($('#sr_postal4').find("option:selected").text());
+    postal_code = ($('#sr_origin_postal4').find("option:selected").text());
     $("#input_postal4").val(postal_code); 
   });
   // ---------------
@@ -115,40 +115,40 @@ $(function() {
 
 
 
-  $( ".sr_street" ).each(function( i ) {
-  $(this).attr('id', 'sr_street' + i);
+  $( ".sr_origin_street" ).each(function( i ) {
+  $(this).attr('id', 'sr_origin_street' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
-    var sr_street = document.createElement('sr_street');
-    sr_street.type='text/javascript';
+    var sr_origin_street = document.createElement('sr_origin_street');
+    sr_origin_street.type='text/javascript';
   // script.innerHTML=" alert('"+i+"');";
-    $(this).find('sr_street').append(sr_street); 
+    $(this).find('sr_origin_street').append(sr_origin_street); 
   });
 
-  $( ".sr_city" ).each(function( i ) {
-  $(this).attr('id', 'sr_city' + i);
+  $( ".sr_origin_city" ).each(function( i ) {
+  $(this).attr('id', 'sr_origin_city' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
-    var sr_city = document.createElement('sr_city');
-    sr_city.type='text/javascript';
+    var sr_origin_city = document.createElement('sr_origin_city');
+    sr_origin_city.type='text/javascript';
   // script.innerHTML=" alert('"+i+"');";
-    $(this).find('sr_city').append(sr_city); 
+    $(this).find('sr_origin_city').append(sr_origin_city); 
   });
 
-  $( ".sr_state" ).each(function( i ) {
-  $(this).attr('id', 'sr_state' + i);
+  $( ".sr_origin_state" ).each(function( i ) {
+  $(this).attr('id', 'sr_origin_state' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
-    var sr_state = document.createElement('sr_state');
-    sr_state.type='text/javascript';
+    var sr_origin_state = document.createElement('sr_origin_state');
+    sr_origin_state.type='text/javascript';
   // script.innerHTML=" alert('"+i+"');";
-    $(this).find('sr_state').append(sr_state); 
+    $(this).find('sr_origin_state').append(sr_origin_state); 
   });
 
-  $( ".sr_postal" ).each(function( i ) {
-  $(this).attr('id', 'sr_postal' + i);
+  $( ".sr_origin_postal" ).each(function( i ) {
+  $(this).attr('id', 'sr_origin_postal' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
-    var sr_postal = document.createElement('sr_postal');
-    sr_postal.type='text/javascript';
+    var sr_origin_postal = document.createElement('sr_origin_postal');
+    sr_origin_postal.type='text/javascript';
   // script.innerHTML=" alert('"+i+"');";
-    $(this).find('sr_postal').append(sr_postal); 
+    $(this).find('sr_origin_postal').append(sr_origin_postal); 
   });
 
   $( ".input_name" ).each(function( i ) {
@@ -193,21 +193,21 @@ $(function() {
     $(this).find('input_postal').append(script_postal);
   });
 
-  $('.shipment_pickups').on('cocoon:after-insert', function() {
+  $('.shipment_origins').on('cocoon:after-insert', function() {
     check_to_hide_or_show_add_link();
   });
 
-  $('.shipment_pickups').on('cocoon:after-remove', function() {
+  $('.shipment_origins').on('cocoon:after-remove', function() {
     check_to_hide_or_show_add_link();
   });
 
   check_to_hide_or_show_add_link();
 
   function check_to_hide_or_show_add_link() {
-    if ($('.shipment_pickups .nested-fields').length == 5) {
-      $('.add_pickup_address').hide();
+    if ($('.shipment_origins .nested-fields').length == 5) {
+      $('.add_origin_address').hide();
     } else {
-      $('.add_pickup_address').show();
+      $('.add_origin_address').show();
     }
   }
 })

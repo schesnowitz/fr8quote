@@ -2,13 +2,21 @@ class Shipment < ApplicationRecord
 
   has_many :shipperizations
   has_many :shipper_receivers, through: :shipperizations
-  has_many :shipment_pickups, dependent: :destroy
+  has_many :shipment_origins, dependent: :destroy
 
-  accepts_nested_attributes_for :shipment_pickups,
+  accepts_nested_attributes_for :shipment_origins,
                                 allow_destroy: true,
                                 # reject_if: proc{ |attribute| attribute['name'].blank? }
                                 reject_if: :all_blank  
-  validates :shipment_pickups, presence: true  
+  validates :shipment_origins, presence: true  
+
+  has_many :shipment_destinations, dependent: :destroy
+
+  accepts_nested_attributes_for :shipment_destinations,
+                                allow_destroy: true,
+                                # reject_if: proc{ |attribute| attribute['name'].blank? }
+                                reject_if: :all_blank  
+  validates :shipment_destinations, presence: true  
 
   Commodity = 
 [

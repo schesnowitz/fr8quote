@@ -1,7 +1,7 @@
 <tr class="nested-fields" >
 
   <td>
-    <%= link_to_remove_association "remove address", f, class: 'btn btn-danger btn-xs' %>
+    <%= link_to_remove_association "Remove Origin Address", f, class: 'btn btn-danger btn-xs' %>
   </td>
 
 
@@ -12,19 +12,19 @@
 <br>
 <span class='hidden'>
     <%= select_tag "shipper_receivers", 
-          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.street}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_street", class: "sr_street"
+          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.street}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_destination_street", class: "sr_destination_street"
           %>
 <br>
     <%= select_tag "shipper_receivers", 
-          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.city}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_city", class: "sr_city"
+          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.city}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_destination_city", class: "sr_destination_city"
           %>
 <br>    
     <%= select_tag "shipper_receivers", 
-          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.state}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_state", class: "sr_state"
+          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.state}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_destination_state", class: "sr_destination_state"
           %> 
 <br>
     <%= select_tag "shipper_receivers", 
-          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.zip}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_postal", class: "sr_postal"
+          options_for_select(@shipper_receivers.map{ |sr| ["#{sr.zip}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_destination_postal", class: "sr_destination_postal"
           %>   
  </span>         
   </td>   
@@ -53,4 +53,4 @@
 
 
 
-  <%= javascript_include_tag 'shipment_pick_ups' %>
+  <%= javascript_include_tag 'shipment_destinations' %> 

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :shipment_destinations
   resources :shipment_pickups
   resources :shipments do
     get 'shipment_addresses', to: 'shipments#shipment_addresses' 
