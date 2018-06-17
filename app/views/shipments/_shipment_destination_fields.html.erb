@@ -1,14 +1,14 @@
-<tr class="nested-fields" >
-
-  <td>
-    <%= link_to_remove_association "Remove Origin Address", f, class: 'btn btn-danger btn-xs' %>
-  </td>
+<span class="nested-fields" >
 
 
-  <td>
-    <%= select_tag "shipper_receivers", 
+  <div class="card border-success mb-3" style="max-width: 20rem;">
+
+  <div class="card-header"> 
+  <%= f.input :destination_count, label: false, input_html: { class: 'input_destination_count' }  %>
+
+<%= select_tag "shipper_receivers", 
           options_for_select(@shipper_receivers.map{ |sr| [sr.name, sr.id, data: { url: shipper_receivers_path(sr) }]}), 
-          class: 'chosen_shipper_receivers' %>
+          class: 'chosen_destination_shipper_receivers' %>
 <br>
 <span class='hidden'>
     <%= select_tag "shipper_receivers", 
@@ -27,28 +27,25 @@
           options_for_select(@shipper_receivers.map{ |sr| ["#{sr.zip}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_destination_postal", class: "sr_destination_postal"
           %>   
  </span>         
-  </td>   
 
-<td class="" autocomplete='on'>
-<%= f.input :name, label: false, input_html: { class: 'input_name' }  %>
-</td>
 
-<td class="" autocomplete='on'>
-<%= f.input :street, label: false, input_html: { class: 'input_street' } %>
-</td> 
+  <%= f.date_field :date, label: false, input_html: { class: 'input_destination_date' }  %></div>
+  <div class="card-body">
+    <h4 class="card-title"><%= f.input :name, label: false, disabled: true, input_html: { class: 'input_destination_name' }  %></h4>
+    <p class="card-text">
 
-  <td autocomplete='on'>
-  <%= f.input :city, label: false, input_html: { class: 'input_city' } %>
-  </td>
+  <%= f.input :street, label: false, disabled: true, input_html: { class: 'input_destination_street' } %>
+  <%= f.input :city, label: false, disabled: true, input_html: { class: 'input_destination_city' } %>
+  <%= f.input :state, label: false, disabled: true, input_html: { class: 'input_destination_state' } %>
+  <%= f.input :zip, label: false, disabled: true, input_html: { class: 'input_destination_postal' } %>
+  <%= f.input :notes, label: "Notes", input_html: { class: 'input_notes' } %>
+  <br>  
+      <%= link_to_remove_association "Remove Destination Address", f, class: 'btn btn-danger btn-xs' %>
+    </p>
+  </div>
+</div>
 
-    <td autocomplete='on'>
-  <%= f.input :state, label: false, input_html: { class: 'input_state' } %>
-  </td>
-  <td autocomplete='on'>
-  <%= f.input :zip, label: false, input_html: { class: 'input_postal' } %>
-  </td>
-
-</tr> 
+</span>
 
 
 

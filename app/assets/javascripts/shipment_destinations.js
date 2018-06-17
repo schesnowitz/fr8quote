@@ -2,10 +2,10 @@ $(function() {
   // limits the number of categories
   
 
-    $(document).on("change", "#chosen_shipper_receivers0", function() {
+    $(document).on("change", "#chosen_destination_shipper_receivers0", function() {
       $('#sr_destination_street0, #sr_destination_city0, #sr_destination_state0, #sr_destination_postal0').val(this.value);   
 
-    name = ($('#chosen_shipper_receivers0').find("option:selected").text());
+    name = ($('#chosen_destination_shipper_receivers0').find("option:selected").text());
     $("#input_name0").val(name);  
 
     street = ($('#sr_destination_street0').find("option:selected").text());
@@ -22,10 +22,10 @@ $(function() {
   });
 
   // ---------------
-    $(document).on("change", "#chosen_shipper_receivers1", function() {
+    $(document).on("change", "#chosen_destination_shipper_receivers1", function() {
       $('#sr_destination_street1, #sr_destination_city1, #sr_destination_state1, #sr_destination_postal1').val(this.value);   
 
-    name = ($('#chosen_shipper_receivers1').find("option:selected").text());
+    name = ($('#chosen_destination_shipper_receivers1').find("option:selected").text());
     $("#input_name1").val(name);  
 
     street = ($('#sr_destination_street1').find("option:selected").text());
@@ -42,10 +42,10 @@ $(function() {
   });
 
   // ---------------
-    $(document).on("change", "#chosen_shipper_receivers2", function() {
+    $(document).on("change", "#chosen_destination_shipper_receivers2", function() {
       $('#sr_destination_street2, #sr_destination_city2, #sr_destination_state2, #sr_destination_postal2').val(this.value);   
 
-    name = ($('#chosen_shipper_receivers2').find("option:selected").text());
+    name = ($('#chosen_destination_shipper_receivers2').find("option:selected").text());
     $("#input_name2").val(name);  
 
     street = ($('#sr_destination_street2').find("option:selected").text());
@@ -61,10 +61,10 @@ $(function() {
     $("#input_postal2").val(postal_code); 
   });
   // ---------------
-  $(document).on("change", "#chosen_shipper_receivers3", function() {
+  $(document).on("change", "#chosen_destination_shipper_receivers3", function() {
       $('#sr_destination_street3, #sr_destination_city3, #sr_destination_state3, #sr_destination_postal3').val(this.value);   
 
-    name = ($('#chosen_shipper_receivers3').find("option:selected").text());
+    name = ($('#chosen_destination_shipper_receivers3').find("option:selected").text());
     $("#input_name3").val(name);  
 
     street = ($('#sr_destination_street3').find("option:selected").text());
@@ -81,10 +81,10 @@ $(function() {
   });
   // ---------------
 
-  $(document).on("change", "#chosen_shipper_receivers4", function() {
+  $(document).on("change", "#chosen_destination_shipper_receivers4", function() {
       $('#sr_destination_street4, #sr_destination_city4, #sr_destination_state4, #sr_destination_postal4').val(this.value);   
 
-    name = ($('#chosen_shipper_receivers4').find("option:selected").text());
+    name = ($('#chosen_destination_shipper_receivers4').find("option:selected").text());
     $("#input_name4").val(name);  
 
     street = ($('#sr_destination_street4').find("option:selected").text());
@@ -104,8 +104,8 @@ $(function() {
 
   // ---------------
 
-  $( ".chosen_shipper_receivers" ).each(function( i ) {
-  $(this).attr('id', 'chosen_shipper_receivers' + i);
+  $( ".chosen_destination_shipper_receivers" ).each(function( i ) {
+  $(this).attr('id', 'chosen_destination_shipper_receivers' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
     var script=document.createElement('script');
     script.type='text/javascript';

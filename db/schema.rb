@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2018_06_17_080952) do
     t.string "contact_person"
     t.string "notes"
     t.integer "shipment_id"
+    t.integer "destination_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shipment_id"], name: "index_shipment_destinations_on_shipment_id"
@@ -69,6 +70,7 @@ ActiveRecord::Schema.define(version: 2018_06_17_080952) do
     t.string "contact_person"
     t.string "notes"
     t.integer "shipment_id"
+    t.integer "origin_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shipment_id"], name: "index_shipment_origins_on_shipment_id"

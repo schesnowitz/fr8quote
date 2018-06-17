@@ -2,10 +2,10 @@ $(function() {
 
   
 
-    $(document).on("change", "#chosen_shipper_receivers0", function() {
+    $(document).on("change", "#chosen_origin_shipper_receivers0", function() {
       $('#sr_origin_street0, #sr_origin_city0, #sr_origin_state0, #sr_origin_postal0').val(this.value);   
 
-    name = ($('#chosen_shipper_receivers0').find("option:selected").text());
+    name = ($('#chosen_origin_shipper_receivers0').find("option:selected").text());
     $("#input_name0").val(name);  
 
     street = ($('#sr_origin_street0').find("option:selected").text());
@@ -19,13 +19,15 @@ $(function() {
 
     postal_code = ($('#sr_origin_postal0').find("option:selected").text());
     $("#input_postal0").val(postal_code);
+
+    $("#input_origin_count0").val('1'); 
   });
 
   // ---------------
-    $(document).on("change", "#chosen_shipper_receivers1", function() {
+    $(document).on("change", "#chosen_origin_shipper_receivers1", function() {
       $('#sr_origin_street1, #sr_origin_city1, #sr_origin_state1, #sr_origin_postal1').val(this.value);   
 
-    name = ($('#chosen_shipper_receivers1').find("option:selected").text());
+    name = ($('#chosen_origin_shipper_receivers1').find("option:selected").text());
     $("#input_name1").val(name);  
 
     street = ($('#sr_origin_street1').find("option:selected").text());
@@ -39,13 +41,15 @@ $(function() {
 
     postal_code = ($('#sr_origin_postal1').find("option:selected").text());
     $("#input_postal1").val(postal_code); 
+    $("#input_origin_count1").val('2');
+
   });
 
   // ---------------
-    $(document).on("change", "#chosen_shipper_receivers2", function() {
+    $(document).on("change", "#chosen_origin_shipper_receivers2", function() {
       $('#sr_origin_street2, #sr_origin_city2, #sr_origin_state2, #sr_origin_postal2').val(this.value);   
 
-    name = ($('#chosen_shipper_receivers2').find("option:selected").text());
+    name = ($('#chosen_origin_shipper_receivers2').find("option:selected").text());
     $("#input_name2").val(name);  
 
     street = ($('#sr_origin_street2').find("option:selected").text());
@@ -59,12 +63,13 @@ $(function() {
 
     postal_code = ($('#sr_origin_postal2').find("option:selected").text());
     $("#input_postal2").val(postal_code); 
+    $("#input_origin_count2").val('3');
   });
   // ---------------
-  $(document).on("change", "#chosen_shipper_receivers3", function() {
+  $(document).on("change", "#chosen_origin_shipper_receivers3", function() {
       $('#sr_origin_street3, #sr_origin_city3, #sr_origin_state3, #sr_origin_postal3').val(this.value);   
 
-    name = ($('#chosen_shipper_receivers3').find("option:selected").text());
+    name = ($('#chosen_origin_shipper_receivers3').find("option:selected").text());
     $("#input_name3").val(name);  
 
     street = ($('#sr_origin_street3').find("option:selected").text());
@@ -78,13 +83,14 @@ $(function() {
 
     postal_code = ($('#sr_origin_postal3').find("option:selected").text());
     $("#input_postal3").val(postal_code); 
+    $("#input_origin_count3").val('4');
   });
   // ---------------
 
-  $(document).on("change", "#chosen_shipper_receivers4", function() {
+  $(document).on("change", "#chosen_origin_shipper_receivers4", function() {
       $('#sr_origin_street4, #sr_origin_city4, #sr_origin_state4, #sr_origin_postal4').val(this.value);   
 
-    name = ($('#chosen_shipper_receivers4').find("option:selected").text());
+    name = ($('#chosen_origin_shipper_receivers4').find("option:selected").text());
     $("#input_name4").val(name);  
 
     street = ($('#sr_origin_street4').find("option:selected").text());
@@ -98,14 +104,15 @@ $(function() {
 
     postal_code = ($('#sr_origin_postal4').find("option:selected").text());
     $("#input_postal4").val(postal_code); 
+    $("#input_origin_count4").val('5');
   });
   // ---------------
 
 
   // ---------------
 
-  $( ".chosen_shipper_receivers" ).each(function( i ) {
-  $(this).attr('id', 'chosen_shipper_receivers' + i);
+  $( ".chosen_origin_shipper_receivers" ).each(function( i ) {
+  $(this).attr('id', 'chosen_origin_shipper_receivers' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
     var script=document.createElement('script');
     script.type='text/javascript';
@@ -151,7 +158,18 @@ $(function() {
     $(this).find('sr_origin_postal').append(sr_origin_postal); 
   });
 
-  $( ".input_name" ).each(function( i ) {
+
+  $( ".input_origin_count" ).each(function( i ) {
+    $(this).attr('id', 'input_origin_count' + i);
+    $(this).append('<select id=\"text' +i+'\"></select>');
+      var script_count = document.createElement('script_count');
+      script_count.type='text/javascript';
+      $(this).find('input_origin_count').append(script_count); 
+    });
+
+    
+
+  $( ".input_origin_name" ).each(function( i ) {
   $(this).attr('id', 'input_name' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
     var script_name = document.createElement('script_name');
@@ -161,7 +179,7 @@ $(function() {
 
 
 
-  $( ".input_street" ).each(function( i ) {
+  $( ".input_origin_street" ).each(function( i ) {
   $(this).attr('id', 'input_street' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
     var script_street = document.createElement('script_street');
@@ -169,7 +187,7 @@ $(function() {
     $(this).find('input_street').append(script_street);
   });
 
-  $( ".input_city" ).each(function( i ) {
+  $( ".input_origin_city" ).each(function( i ) {
   $(this).attr('id', 'input_city' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
     var script_city = document.createElement('script_city');
@@ -177,7 +195,7 @@ $(function() {
     $(this).find('input_city').append(script_city);
   });
 
-  $( ".input_state" ).each(function( i ) {
+  $( ".input_origin_state" ).each(function( i ) {
   $(this).attr('id', 'input_state' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
     var script_state = document.createElement('script_state');
@@ -185,7 +203,7 @@ $(function() {
     $(this).find('input_state').append(script_state);
   });
 
-  $( ".input_postal" ).each(function( i ) {
+  $( ".input_origin_postal" ).each(function( i ) {
   $(this).attr('id', 'input_postal' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
     var script_postal = document.createElement('script_postal');

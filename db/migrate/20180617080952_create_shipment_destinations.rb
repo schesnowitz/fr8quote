@@ -10,6 +10,7 @@ class CreateShipmentDestinations < ActiveRecord::Migration[5.2]
       t.string :contact_person
       t.string :notes
       t.integer :shipment_id, index: true
+      t.integer :destination_count
 
       t.timestamps
     end
