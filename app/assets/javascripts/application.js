@@ -16,6 +16,9 @@
 //= require bootstrap
 //= require rails-ujs
 //= require activestorage
+//= require shipment_pick_ups
+
+
 
 //= require jquery.scrollbar/jquery.scrollbar.min.js
 //= require jquery-scrollLock/jquery-scrollLock.min.js
@@ -40,4 +43,5 @@
 //= require reload.js 
 //= require local-time.js 
 //= require masked.js 
+
 //= require cocoon

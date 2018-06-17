@@ -1,6 +1,5 @@
 <div data-turbolinks="false">
 <%= simple_form_for(@shipment) do |f| %>
-<%= f.error_notification %>
 <div class="card">
   <div class="card-header">
     <% if action_name == "new" %>
@@ -162,7 +161,7 @@
     <div class="form-actions">
 
       <%= f.button :submit %>
-          <%= link_to_add_association 'Add Pickup Address', f, :shipment_pickups, class: 'btn btn-primary', data: { association_insertion_node: '.shipment_pickups', association_insertion_method: :append } %>
+          <%= link_to_add_association 'Add Pickup Address', f, :shipment_pickups, class: 'btn btn-primary add_pickup_address', data: { association_insertion_node: '.shipment_pickups', association_insertion_method: :append } %>
     </div>
   </div>
 </div>

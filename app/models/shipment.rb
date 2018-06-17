@@ -6,12 +6,14 @@ class Shipment < ApplicationRecord
 
   accepts_nested_attributes_for :shipment_pickups,
                                 allow_destroy: true,
-                                reject_if: proc{ |attribute| attribute['name'].blank? }
-  
+                                # reject_if: proc{ |attribute| attribute['name'].blank? }
+                                reject_if: :all_blank  
+  validates :shipment_pickups, presence: true  
+
   Commodity = 
 [
   "Household Goods",
-  "Metal - sheets, coils, rolls",
+  "Metal - sheets, coils, rolls",        
   'Motor Vehicles',
   'Drive/Tow away',
   'Logs, Poles, Beams, Lumber',

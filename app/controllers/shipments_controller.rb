@@ -22,7 +22,7 @@ class ShipmentsController < ApplicationController
   # GET /shipments/1/edit
   def edit
     @shipper_receivers = ShipperReceiver.all
-
+    @shipment_pickups = @shipment.shipment_pickups
   end
 
 
@@ -30,14 +30,16 @@ class ShipmentsController < ApplicationController
   # POST /shipments
   # POST /shipments.json
   def create
+    @shipper_receivers = ShipperReceiver.all
     @shipment = Shipment.new(shipment_params)
 
-    @shipment_pickups = @shipment.shipment_pickups.build
+    # @shipment_pickups = @shipment.shipment_pickups.build
     respond_to do |format|
       if @shipment.save 
-        format.html { redirect_to shipment_shipment_addresses_path(@shipment), notice: 'Shipment was successfully created.' }
+        format.html { redirect_to @shipment, notice: 'Shipment was successfully updated.' }
         format.json { render :show, status: :created, location: @shipment }
       else
+        flash[:danger] = "#{@shipment.errors.full_messages.to_sentence}"
         format.html { render :new }
         format.json { render json: @shipment.errors, status: :unprocessable_entity }
       end
@@ -47,12 +49,14 @@ class ShipmentsController < ApplicationController
   # PATCH/PUT /shipments/1
   # PATCH/PUT /shipments/1.json
   def update
-
+    @shipper_receivers = ShipperReceiver.all
     respond_to do |format|
       if @shipment.update(shipment_params)
+        @shipment_pickups = @shipment.shipment_pickups
         format.html { redirect_to @shipment, notice: 'Shipment was successfully updated.' }
         format.json { render :show, status: :ok, location: @shipment }
       else
+        flash[:danger] = "#{@shipment.errors.full_messages.to_sentence}"
         format.html { render :edit }
         format.json { render json: @shipment.errors, status: :unprocessable_entity }
       end
