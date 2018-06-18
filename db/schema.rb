@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_02_202914) do
+ActiveRecord::Schema.define(version: 2018_06_17_230713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,18 +44,37 @@ ActiveRecord::Schema.define(version: 2018_06_02_202914) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "shipment_pickups", force: :cascade do |t|
-    t.date "date"
-    t.string "name"
-    t.string "street"
-    t.string "city"
-    t.string "state"
-    t.string "zip"
-    t.string "contact_person"
-    t.string "notes"
-    t.integer "shipment_id"
+  create_table "shipment_destinations", force: :cascade do |t|
+    t.date "destination_date"
+    t.string "destination_name"
+    t.string "destination_street"
+    t.string "destination_city"
+    t.string "destination_state"
+    t.string "destination_zip"
+    t.string "destination_contact_person"
+    t.string "destination_notes"
+    t.integer "destination_shipment_id"
+    t.integer "destination_count"
+    t.string "destination_drop"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "shipment_origins", force: :cascade do |t|
+    t.date "origin_date"
+    t.string "origin_name"
+    t.string "origin_street"
+    t.string "origin_city"
+    t.string "origin_state"
+    t.string "origin_zip"
+    t.string "origin_contact_person"
+    t.string "origin_notes"
+    t.integer "shipment_id"
+    t.integer "origin_count"
+    t.string "origin_drop"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shipment_id"], name: "index_shipment_origins_on_shipment_id"
   end
 
   create_table "shipments", force: :cascade do |t|

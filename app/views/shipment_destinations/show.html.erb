@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @shipment_destination.date %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shipment_destination.name %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @shipment_destination.street %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @shipment_destination.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @shipment_destination.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @shipment_destination.zip %>
+</p>
+
+<p>
+  <strong>Contact person:</strong>
+  <%= @shipment_destination.contact_person %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @shipment_destination.notes %>
+</p>
+
+<p>
+  <strong>Shipment:</strong>
+  <%= @shipment_destination.shipment_id %>
+</p>
+
+<p>
+  <strong>Destination count:</strong>
+  <%= @shipment_destination.destination_count %>
+</p>
+
+<%= link_to 'Edit', edit_shipment_destination_path(@shipment_destination) %> |
+<%= link_to 'Back', shipment_destinations_path %>

@@ -2,10 +2,10 @@ $(function() {
   // limits the number of categories
   
 
-    $(document).on("change", "#chosen_shipper_receivers0", function() {
+    $(document).on("change", "#chosen_origin_shipper_receivers0", function() {
       $('#sr_street0, #sr_city0, #sr_state0, #sr_postal0').val(this.value);   
 
-    name = ($('#chosen_shipper_receivers0').find("option:selected").text());
+    name = ($('#chosen_origin_shipper_receivers0').find("option:selected").text());
     $("#input_name0").val(name);  
 
     street = ($('#sr_street0').find("option:selected").text());
@@ -19,13 +19,15 @@ $(function() {
 
     postal_code = ($('#sr_postal0').find("option:selected").text());
     $("#input_postal0").val(postal_code);
+
+    $("#origin_count0").val(1);
   });
 
   // ---------------
-    $(document).on("change", "#chosen_shipper_receivers1", function() {
+    $(document).on("change", "#chosen_origin_shipper_receivers1", function() {
       $('#sr_street1, #sr_city1, #sr_state1, #sr_postal1').val(this.value);   
 
-    name = ($('#chosen_shipper_receivers1').find("option:selected").text());
+    name = ($('#chosen_origin_shipper_receivers1').find("option:selected").text());
     $("#input_name1").val(name);  
 
     street = ($('#sr_street1').find("option:selected").text());
@@ -39,13 +41,15 @@ $(function() {
 
     postal_code = ($('#sr_postal1').find("option:selected").text());
     $("#input_postal1").val(postal_code); 
+
+    $("#origin_count1").val(2);
   });
 
   // ---------------
-    $(document).on("change", "#chosen_shipper_receivers2", function() {
+    $(document).on("change", "#chosen_origin_shipper_receivers2", function() {
       $('#sr_street2, #sr_city2, #sr_state2, #sr_postal2').val(this.value);   
 
-    name = ($('#chosen_shipper_receivers2').find("option:selected").text());
+    name = ($('#chosen_origin_shipper_receivers2').find("option:selected").text());
     $("#input_name2").val(name);  
 
     street = ($('#sr_street2').find("option:selected").text());
@@ -59,12 +63,14 @@ $(function() {
 
     postal_code = ($('#sr_postal2').find("option:selected").text());
     $("#input_postal2").val(postal_code); 
+
+    $("#origin_count2").val(3);
   });
   // ---------------
-  $(document).on("change", "#chosen_shipper_receivers3", function() {
+  $(document).on("change", "#chosen_origin_shipper_receivers3", function() {
       $('#sr_street3, #sr_city3, #sr_state3, #sr_postal3').val(this.value);   
 
-    name = ($('#chosen_shipper_receivers3').find("option:selected").text());
+    name = ($('#chosen_origin_shipper_receivers3').find("option:selected").text());
     $("#input_name3").val(name);  
 
     street = ($('#sr_street3').find("option:selected").text());
@@ -78,13 +84,15 @@ $(function() {
 
     postal_code = ($('#sr_postal3').find("option:selected").text());
     $("#input_postal3").val(postal_code); 
+
+    $("#origin_count3").val(4);
   });
   // ---------------
 
-  $(document).on("change", "#chosen_shipper_receivers4", function() {
+  $(document).on("change", "#chosen_origin_shipper_receivers4", function() {
       $('#sr_street4, #sr_city4, #sr_state4, #sr_postal4').val(this.value);   
 
-    name = ($('#chosen_shipper_receivers4').find("option:selected").text());
+    name = ($('#chosen_origin_shipper_receivers4').find("option:selected").text());
     $("#input_name4").val(name);  
 
     street = ($('#sr_street4').find("option:selected").text());
@@ -98,14 +106,16 @@ $(function() {
 
     postal_code = ($('#sr_postal4').find("option:selected").text());
     $("#input_postal4").val(postal_code); 
+
+    $("#origin_count4").val(5); 
   });
   // ---------------
 
 
   // ---------------
 
-  $( ".chosen_shipper_receivers" ).each(function( i ) {
-  $(this).attr('id', 'chosen_shipper_receivers' + i);
+  $( ".chosen_origin_shipper_receivers" ).each(function( i ) {
+  $(this).attr('id', 'chosen_origin_shipper_receivers' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
     var script=document.createElement('script');
     script.type='text/javascript';
@@ -113,7 +123,14 @@ $(function() {
     $(this).find('select').append(script);
   });
 
-
+  $( ".origin_count" ).each(function( i ) {
+  $(this).attr('id', 'origin_count' + i);
+  $(this).append('<select id=\"text' +i+'\"></select>');
+    var origin_count = document.createElement('origin_count');
+    origin_count.type='text/javascript';
+  // script.innerHTML=" alert('"+i+"');";
+    $(this).find('origin_count').append(origin_count);  
+  });
 
   $( ".sr_street" ).each(function( i ) {
   $(this).attr('id', 'sr_street' + i);
@@ -193,21 +210,21 @@ $(function() {
     $(this).find('input_postal').append(script_postal);
   });
 
-  $('.shipment_pickups').on('cocoon:after-insert', function() {
+  $('.shipment_origins').on('cocoon:after-insert', function() {
     check_to_hide_or_show_add_link();
   });
 
-  $('.shipment_pickups').on('cocoon:after-remove', function() {
+  $('.shipment_origins').on('cocoon:after-remove', function() {
     check_to_hide_or_show_add_link();
   });
 
   check_to_hide_or_show_add_link();
 
   function check_to_hide_or_show_add_link() {
-    if ($('.shipment_pickups .nested-fields').length == 5) {
-      $('.add_pickup_address').hide();
+    if ($('.shipment_origins .nested-fields').length == 5) {
+      $('.add_origin_address').hide();
     } else {
-      $('.add_pickup_address').show();
+      $('.add_origin_address').show();
     }
   }
 })

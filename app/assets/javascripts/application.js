@@ -16,8 +16,8 @@
 //= require bootstrap
 //= require rails-ujs
 //= require activestorage
-//= require shipment_pick_ups
-
+//= require shipment_origins.js
+//= require shipment_destinations.js 
 
 
 //= require jquery.scrollbar/jquery.scrollbar.min.js
