@@ -10,7 +10,7 @@ app_setting.theme_color = '8'
 app_setting.save 
 puts app_setting.inspect
 
-10.times do
+50.times do
 sr = ShipperReceiver.create!(
   :name => Faker::Company.name,
   :street => Faker::Address.street_address,

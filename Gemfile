@@ -66,3 +66,8 @@ gem 'httparty', '~> 0.15.6'
 gem 'local_time', '~> 2.0'
 gem 'bootstrap', '~> 4.1.1'
 gem "cocoon" 
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-chosen'
+  gem 'rails-assets-chosen-bootstrap' # if using bootstrap
+end

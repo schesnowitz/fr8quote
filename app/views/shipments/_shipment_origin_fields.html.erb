@@ -9,7 +9,7 @@
 
     <%= select_tag "shipper_receivers", 
           options_for_select(@shipper_receivers.map{ |sr| [sr.name, sr.id, data: { url: shipper_receivers_path(sr) }]}), 
-          class: 'chosen_origin_shipper_receivers', include_blank: "Search Shippers" %>
+          class: 'chosen_origin_shipper_receivers', include_blank: "search shippers" %>
 <br>
 <span class='hidden'>
     <%= select_tag "shipper_receivers", 
@@ -34,7 +34,7 @@
 </td>
 
 <td>
-<%= f.input :origin_name, label: false, input_html: { class: 'input_name' }, disabled: true  %>
+<%= f.input :origin_name, label: false, input_html: { class: 'input_name hidden' }, disabled: true  %>
 </td>
 
 <td>

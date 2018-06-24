@@ -43,5 +43,5 @@
 //= require reload.js 
 //= require local-time.js 
 //= require masked.js 
-
+//= require chosen
 //= require cocoon

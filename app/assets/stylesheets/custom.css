@@ -1,3 +1,12 @@
+/*
+ *= require chosen-bootstrap
+ *= require_self
+ */
+
+/* #chosen_origin_shipper_receivers0 {
+  width:200px;
+} */
+
 .hidden {
   display: none;
 }
