@@ -67,7 +67,6 @@ class CreateShipments < ActiveRecord::Migration[5.2]
       t.string :broker_rep_number
       t.string :broker_rep_cell
       t.string :broker_after_hours_instructions
-      t.boolean :has_multiple_pd
       t.timestamps
     end
   end

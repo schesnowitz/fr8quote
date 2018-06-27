@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Broker Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Phone</th>
+      <th>Fax</th>
+      <th>Website</th>
+      <th>Logo</th>
+      <th>Mc</th>
+      <th>Contact</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @broker_profiles.each do |broker_profile| %>
+      <tr>
+        <td><%= broker_profile.name %></td>
+        <td><%= broker_profile.street %></td>
+        <td><%= broker_profile.city %></td>
+        <td><%= broker_profile.state %></td>
+        <td><%= broker_profile.zip %></td>
+        <td><%= broker_profile.phone %></td>
+        <td><%= broker_profile.fax %></td>
+        <td><%= broker_profile.url %></td>
+        <td><%= broker_profile.logo %></td>
+        <td><%= broker_profile.mc %></td>
+        <td><%= broker_profile.contact %></td>
+        <td><%= broker_profile.email %></td>
+        <td><%= link_to 'Show', broker_profile %></td>
+        <td><%= link_to 'Edit', edit_broker_profile_path(broker_profile) %></td>
+        <td><%= link_to 'Destroy', broker_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Broker Profile', new_broker_profile_path %>

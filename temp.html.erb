@@ -1,80 +1,38 @@
-<div class='row'>
-<div class=col>
-<div class="card border-dark">
-  <div class="card-header">Shipper</div>
-  <div class="card-body">
-  <% f.date_field :pick_up_date %> <br><br>
-          <%= select_tag "shipper_receivers", 
-          options_for_select(@shipper_receivers.map{ |sr| [sr.name, sr.id, data: { url: new_shipper_receiver_path(sr) }]}), 
-          class: 'chosen-select' %>
-          <%= simple_fields_for :shipment_pickups do |sp| %>
-  <%= sp.error_notification %>
+    <%= select_tag "shipper_receivers", 
+          options_for_select(@shipper_receivers.map{ |sr| [sr.name, sr.id, data: { url: shipper_receivers_path(sr) }]}), 
+          class: 'chosen_origin_shipper_receivers', include_blank: "search shippers" %>
 
 
-  <div class="form-inputs">
-  <br><br>
-    <%= sp.date_field :date, input_html: { class: 'form-control form-control-sm' } %> 
-    <br><br>
-    <%= sp.input :name, label: false, placeholder: "Pick Up Company Name", input_html: { class: 'form-control form-control-sm' } %>
-    <%= sp.input :street, label: false, placeholder: "Street", input_html: { class: 'form-control form-control-sm' } %>
-    <%= sp.input :city, label: false, placeholder: "City", input_html: { class: 'form-control form-control-sm' } %>
-    <%= sp.input :state, label: false, placeholder: "State | Provence", input_html: { class: 'form-control form-control-sm' } %>
-    <%= sp.input :zip, label: false, placeholder: "Postal Code", input_html: { class: 'form-control form-control-sm' } %>
-    <%= sp.input :contact_person, label: false, placeholder: "Contact", input_html: { class: 'form-control form-control-sm' } %>
-    <%= sp.input :notes, label: false, placeholder: "Pick Up Company Notes", input_html: { class: 'form-control form-control-sm' } %>
-    <%= sp.input :shipment_id %>
-  </div>
-
-  <div class="form-actions">
-    <%= sp.button :submit %>
-  </div>
-<% end %>
-          <% f.input :shipper_company_name, label: false, placeholder: "Pick Up Company Name", input_html: { class: 'form-control form-control-sm' } %>
-          <%= f.input :origin_street, label: false, placeholder: "Street Address", input_html: { class: 'form-control form-control-sm' }  %>
-          <%= f.input :origin_city, label: false, placeholder: "City", input_html: { class: 'form-control form-control-sm' }  %>
-          <%= f.select :origin_state_provence, ApplicationRecord::StateProvence, include_blank: "State | Provence", label: false %>
-          <%= f.input :origin_postal_code, label: false, placeholder: "postal code", input_html: { class: 'form-control form-control-sm' } %>
-          <label>phone</label><br>
-          <%= f.text_field :origin_phone, id: 'phone3', input_html: { class: 'form-control form-control-sm' } %> 
-          <%= f.input :origin_contact, label: false, placeholder: "Contact Person", input_html: { class: 'form-control form-control-sm' } %>
-          <%= f.input :pick_up_notes, placeholder: "dock 34 @12.45am", input_html: { class: 'form-control form-control-sm' } %>
-  </div>
-</div>
-</div>
+          <%= f.collection_select :shipper_receiver_ids, ShipperReceiver.all, :id, :name, include_blank: "Select Origin" %>
 
 
-<div class='col'>
-<div class="card border-dark">
-  <div class="card-header">Destination</div>
-  <div class="card-body">
- <%= f.date_field :delivery_date %>
-            <%= f.input :receiver_company_name, label: false, placeholder: "Deliver to Company Name", input_html: { class: 'form-control form-control-sm' }  %>
-            <%= f.input :destination_street, label: false, placeholder: "Street Address", input_html: { class: 'form-control form-control-sm' }  %>
-            <%= f.input :destination_city, label: false, placeholder: "City", input_html: { class: 'form-control form-control-sm' }  %>
-            <%= f.select :destination_state_provence, ApplicationRecord::StateProvence, include_blank: "State | Provence", label: false  %>
-            <%= f.input :destination_postal_code, label: false, placeholder: "postal code", input_html: { class: 'form-control form-control-sm' } %>
-            <label>phone</label><br>
-            <%= f.phone_field :destination_phone, id: 'phone4', input_html: { class: 'form-control form-control-sm' } %>
-            <%= f.input :destination_contact, label: false, placeholder: "Contact Person", input_html: { class: 'form-control form-control-sm' } %>
-            <%= f.input :delivery_notes, placeholder: "see sally @3pm", input_html: { class: 'form-control form-control-sm' }  %>
-  </div>
-</div>
-</div>
-</div>
+          <%= f.collection_check_boxes :shipper_receiver_ids, ShipperReceiver.all, :id, :name %>
 
 
+                <%= f.simple_fields_for :shipment_origins do |sp| %>
+        <%= render 'shipment_origin_fields', f: sp %>
+      <% end %>
 
 
-  <%= f.input :special_instructions, input_html: { class: 'form-control form-control-sm' } %>
-  
-  <%= f.input :miles, input_html: { class: 'form-control form-control-sm' } %>
-  <%= f.input :kilometers, input_html: { class: 'form-control form-control-sm' } %>
+      <td>
+<%= f.input :origin_count, label: false, input_html: { class: 'origin_count' }, disabled: true  %>
+</td>
 
+<td>
+<%= f.input :origin_name, label: false, input_html: { class: 'input_name hidden' }, disabled: true  %>
+</td>
 
+<td>
+<%= f.input :origin_street, label: false, input_html: { class: 'input_street' }, disabled: true %>
+</td> 
 
-    <%= f.input :total_company_expenses %>
-  <%= f.input :driver_cents_pm %>
-  <%= f.input :rate_after_booking_fee %>
-  <%= f.input :agent_fee %>
+  <td>
+  <%= f.input :origin_city, label: false, input_html: { class: 'input_city' }, disabled: true %>
+  </td>
 
-  <%= f.input :delivery_notes %>
+    <td>
+  <%= f.input :origin_state, label: false, input_html: { class: 'input_state' }, disabled: true %>
+  </td>
+  <td>
+  <%= f.input :origin_zip, label: false, input_html: { class: 'input_postal' }, disabled: true %>
+  </td>

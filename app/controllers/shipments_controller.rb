@@ -1,6 +1,6 @@
 class ShipmentsController < ApplicationController
   before_action :set_shipment, only: [:show, :edit, :update, :destroy] 
-
+  before_action :set_broker, only: [:show, :edit, :update, :destroy] 
   # GET /shipments
   # GET /shipments.json
   def index
@@ -16,11 +16,12 @@ class ShipmentsController < ApplicationController
   def new
     @shipment = Shipment.new
     @shipper_receivers = ShipperReceiver.all
-
+    @broker_profiles = BrokerProfile.all
   end
 
   # GET /shipments/1/edit
   def edit
+    @broker_profiles = BrokerProfile.all
     @shipper_receivers = ShipperReceiver.all
     @shipment_origins = @shipment.shipment_origins
   end
@@ -30,6 +31,7 @@ class ShipmentsController < ApplicationController
   # POST /shipments
   # POST /shipments.json
   def create
+    @broker_profiles = BrokerProfile.all
     @shipper_receivers = ShipperReceiver.all
     @shipment = Shipment.new(shipment_params)
 
@@ -49,6 +51,7 @@ class ShipmentsController < ApplicationController
   # PATCH/PUT /shipments/1
   # PATCH/PUT /shipments/1.json
   def update
+    @broker_profiles = BrokerProfile.all
     @shipper_receivers = ShipperReceiver.all
     respond_to do |format|
       if @shipment.update(shipment_params)
@@ -89,6 +92,10 @@ class ShipmentsController < ApplicationController
     def set_shipment
       @shipment = Shipment.find(params[:id])
     end
+    def set_broker
+      @broker_profile = BrokerProfile.find(params[:id])
+    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shipment_params
@@ -136,7 +143,8 @@ class ShipmentsController < ApplicationController
                                         :destination_latitude, 
                                         :destination_longitude, 
                                         :percentage_id, 
-                                        :kilograms, :pounds, 
+                                        :kilograms, 
+                                        :pounds, 
                                         :is_kilograms, 
                                         :is_pounds, 
                                         :is_hazmat, 
@@ -158,20 +166,11 @@ class ShipmentsController < ApplicationController
                                         :broker_after_hours_instructions,
                                         :has_multiple_pd,
                                         :vehcile_id,
-                                        :shipper_receiver_id, 
-                                        shipment_origins_attributes: 
-                                        # [:id, 
-                                        # :_destroy, 
-                                        # :date,
-                                        # :name,
-                                        # :street,
-                                        # :city,
-                                        # :state,
-                                        # :zip,
-                                        # :contact_person,
-                                        # :notes]
-                                        ShipmentOrigin.attribute_names.map(&:to_sym).push(:_destroy),
-                                        shipperization_ids: []
+                                        :broker_profile_id,
+                                        :shipper_receiver_ids,
+                                        :shipper_receiver_ids => [], shipper_receivers_attributes: [:name]
+                                        
+                                        
 
                                         )
     end

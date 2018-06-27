@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require rails-ujs
 //= require activestorage
+//= require custom 
 //= require shipment_origins.js
 //= require shipment_destinations.js 
 

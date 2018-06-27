@@ -1,5 +1,5 @@
 $(function() {
-  // limits the number of categories
+
   $(".chosen_origin_shipper_receivers").chosen();
 
     $(document).on("change", "#chosen_origin_shipper_receivers0", function() {
@@ -209,7 +209,7 @@ $(function() {
     script_postal.type='text/javascript';
     $(this).find('input_postal').append(script_postal);
   });
-
+  // limits the number of origin addresses
   $('.shipment_origins').on('cocoon:after-insert', function() {
     check_to_hide_or_show_add_link();
   });

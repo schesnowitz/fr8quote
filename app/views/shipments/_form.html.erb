@@ -20,8 +20,11 @@
       <div class="quick-stats__item col-md-3">
         <div class="quick-stats__info">
           <h2>987,459</h2>
-          <small>Select Broker</small>
-          <%= f.input :broker_profile_id, input_html: { class: 'form-control form-control-sm' } %>
+          <%= f.collection_select :broker_profile_id, @broker_profiles.order(:name),
+          :id, 
+          :name, include_blank: "Search Brokers"
+          %>
+
         </div>
         <div class="quick-stats__chart peity-bar">6,4,8,6,5,6,7,8,3,5,9</div>
       </div>
@@ -151,11 +154,13 @@
   </thead>
 
   <tbody class='shipment_origins'>
-      <%= f.simple_fields_for :shipment_origins do |sp| %>
-        <%= render 'shipment_origin_fields', f: sp %>
-      <% end %>
+<%= render 'shipment_origin_fields', f: f %>
+
   </tbody>
 </table>
+
+
+
 
 
 

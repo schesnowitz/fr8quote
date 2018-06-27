@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :broker_profiles
   resources :shipment_destinations
   resources :shipment_pickups
   resources :shipments do

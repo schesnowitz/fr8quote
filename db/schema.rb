@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_17_230713) do
+ActiveRecord::Schema.define(version: 2018_06_24_094357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,23 @@ ActiveRecord::Schema.define(version: 2018_06_17_230713) do
     t.string "theme_color"
     t.boolean "hidden_sidebar", default: false
     t.boolean "boxed_content", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "broker_profiles", force: :cascade do |t|
+    t.string "name"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "phone"
+    t.string "fax"
+    t.string "url"
+    t.string "logo"
+    t.string "mc"
+    t.string "contact"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -144,7 +161,6 @@ ActiveRecord::Schema.define(version: 2018_06_17_230713) do
     t.string "broker_rep_number"
     t.string "broker_rep_cell"
     t.string "broker_after_hours_instructions"
-    t.boolean "has_multiple_pd"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["broker_profile_id"], name: "index_shipments_on_broker_profile_id"

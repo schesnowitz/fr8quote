@@ -6,10 +6,9 @@
 
 
   <td>
+ 
 
-    <%= select_tag "shipper_receivers", 
-          options_for_select(@shipper_receivers.map{ |sr| [sr.name, sr.id, data: { url: shipper_receivers_path(sr) }]}), 
-          class: 'chosen_origin_shipper_receivers', include_blank: "search shippers" %>
+
 <br>
 <span class='hidden'>
     <%= select_tag "shipper_receivers", 
@@ -29,28 +28,7 @@
           %>   
  </span>         
   </td>   
-<td>
-<%= f.input :origin_count, label: false, input_html: { class: 'origin_count' }, disabled: true  %>
-</td>
 
-<td>
-<%= f.input :origin_name, label: false, input_html: { class: 'input_name hidden' }, disabled: true  %>
-</td>
-
-<td>
-<%= f.input :origin_street, label: false, input_html: { class: 'input_street' }, disabled: true %>
-</td> 
-
-  <td>
-  <%= f.input :origin_city, label: false, input_html: { class: 'input_city' }, disabled: true %>
-  </td>
-
-    <td>
-  <%= f.input :origin_state, label: false, input_html: { class: 'input_state' }, disabled: true %>
-  </td>
-  <td>
-  <%= f.input :origin_zip, label: false, input_html: { class: 'input_postal' }, disabled: true %>
-  </td>
 
 </tr> 
 
