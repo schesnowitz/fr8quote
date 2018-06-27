@@ -1,6 +1,6 @@
-class CreateShipperReceivers < ActiveRecord::Migration[5.2]
+class CreateShippers < ActiveRecord::Migration[5.2]
   def change
-    create_table :shipper_receivers do |t|
+    create_table :shippers do |t|
       t.string :name
       t.string :street
       t.string :city

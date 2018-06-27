@@ -77,23 +77,6 @@ ActiveRecord::Schema.define(version: 2018_06_24_094357) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "shipment_origins", force: :cascade do |t|
-    t.date "origin_date"
-    t.string "origin_name"
-    t.string "origin_street"
-    t.string "origin_city"
-    t.string "origin_state"
-    t.string "origin_zip"
-    t.string "origin_contact_person"
-    t.string "origin_notes"
-    t.integer "shipment_id"
-    t.integer "origin_count"
-    t.string "origin_drop"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["shipment_id"], name: "index_shipment_origins_on_shipment_id"
-  end
-
   create_table "shipments", force: :cascade do |t|
     t.string "commodity"
     t.string "weight"
@@ -169,7 +152,14 @@ ActiveRecord::Schema.define(version: 2018_06_24_094357) do
     t.index ["vehcile_id"], name: "index_shipments_on_vehcile_id"
   end
 
-  create_table "shipper_receivers", force: :cascade do |t|
+  create_table "shipperizations", force: :cascade do |t|
+    t.integer "shipment_id"
+    t.integer "shipper_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shippers", force: :cascade do |t|
     t.string "name"
     t.string "street"
     t.string "city"
@@ -180,13 +170,6 @@ ActiveRecord::Schema.define(version: 2018_06_24_094357) do
     t.string "email"
     t.string "url"
     t.string "telephone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "shipperizations", force: :cascade do |t|
-    t.integer "shipment_id"
-    t.integer "shipper_receiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

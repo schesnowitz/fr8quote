@@ -1,17 +1,17 @@
 class Shipment < ApplicationRecord
 
   has_many :shipperizations
-  has_many :shipper_receivers, through: :shipperizations
-  accepts_nested_attributes_for :shipper_receivers, allow_destroy: true
-  has_many :shipment_origins, dependent: :destroy
+  has_many :shippers, through: :shipperizations
+  accepts_nested_attributes_for :shippers, allow_destroy: true
+  # has_many :shipment_origins, dependent: :destroy
   belongs_to :broker_profile
 
-  accepts_nested_attributes_for :shipment_origins,
-                                allow_destroy: true,
-                                # reject_if: proc{ |attribute| attribute['name'].blank? }
-                                reject_if: :all_blank  
+  # accepts_nested_attributes_for :shipment_origins,
+  #                               allow_destroy: true,
+  #                               # reject_if: proc{ |attribute| attribute['name'].blank? }
+  #                               reject_if: :all_blank  
   # validates :shipment_origins, presence: true  
-    # validates :shipper_receivers, presence: true   
+    # validates :shippers, presence: true   
   Commodity = 
 [
   "Household Goods",

@@ -27,12 +27,15 @@
           options_for_select(@shipper_receivers.map{ |sr| ["#{sr.zip}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_postal", class: "sr_postal"
           %>   
  </span>         
+
   </td>   
 
 
 </tr> 
-
-
+ <%= f.collection_select :shipper_receiver_ids, ShipperReceiver.order(:name), :id, :name %>
+<% @shipment.shipper_receivers.each do |ssr| %>
+<%= ssr.name %>
+<% end %>
 
      
 

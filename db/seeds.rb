@@ -11,7 +11,7 @@ app_setting.save
 puts app_setting.inspect
 
 5.times do
-sr = ShipperReceiver.create!(
+sr = Shipper.create!(
   :name => Faker::Company.name,
   :street => Faker::Address.street_address,
   :city => Faker::Address.city,

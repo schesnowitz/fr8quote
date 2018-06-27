@@ -1,4 +1,4 @@
 class Shipperization < ApplicationRecord
   belongs_to :shipment
-  belongs_to :shipper_receiver
+  belongs_to :shipper
 end
