@@ -33,7 +33,7 @@ class ShipmentsController < ApplicationController
     @shipper_receivers = ShipperReceiver.all
     @shipment = Shipment.new(shipment_params)
 
-    # @shipment_origins = @shipment.shipment_origins.build
+    @shipment_origins = @shipment.shipment_origins.build
     respond_to do |format|
       if @shipment.save 
         format.html { redirect_to @shipment, notice: 'Shipment was successfully updated.' }
@@ -160,20 +160,7 @@ class ShipmentsController < ApplicationController
                                         :vehcile_id,
                                         :shipper_receiver_id, 
                                         shipment_origins_attributes: 
-                                        # [:id, 
-                                        # :_destroy, 
-                                        # :date,
-                                        # :name,
-                                        # :street,
-                                        # :city,
-                                        # :state,
-                                        # :zip,
-                                        # :contact_person,
-                                        # :notes]
-                                        ShipmentOrigin.attribute_names.map(&:to_sym).push(:_destroy),
-                                        shipperization_ids: []
-
-                                        )
+                                        ShipmentOrigin.attribute_names.map(&:to_sym).push(:_destroy))
     end
 end
 

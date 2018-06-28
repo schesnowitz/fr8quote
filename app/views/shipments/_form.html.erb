@@ -151,8 +151,8 @@
   </thead>
 
   <tbody class='shipment_origins'>
-      <%= f.simple_fields_for :shipment_origins do |sp| %>
-        <%= render 'shipment_origin_fields', f: sp %>
+      <%= f.simple_fields_for :shipment_origins do |builder| %>
+        <%= render 'shipment_origin_fields', f: builder %>
       <% end %>
   </tbody>
 </table>

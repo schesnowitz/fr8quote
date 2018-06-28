@@ -16,6 +16,8 @@
 //= require bootstrap
 //= require rails-ujs
 //= require activestorage
+//= require chosen
+//= require cocoon
 //= require shipment_origins.js
 //= require shipment_destinations.js 
 
@@ -43,5 +45,4 @@
 //= require reload.js 
 //= require local-time.js 
 //= require masked.js 
-//= require chosen
-//= require cocoon
+
