@@ -210,6 +210,69 @@ $(function() {
     $(this).find('input_postal').append(script_postal);
   });
 
+  $( ".origin_date" ).each(function( i ) {
+    $(this).attr('id', 'origin_date' + i);
+    $(this).append('<select id=\"text' +i+'\"></select>');
+      var origin_date = document.createElement('origin_date');
+      origin_date.type='text/javascript';
+      $(this).find('origin_date').append(origin_date);
+    });
+
+    $( ".hide_drop" ).each(function( i ) {
+      $(this).attr('id', 'hide_drop' + i);
+      $(this).append('<span id=\"text' +i+'\"></span>');
+        var hide_drop = document.createElement('hide_drop');
+        hide_drop.type='text/javascript';
+      // script.innerHTML=" alert('"+i+"');";
+        $(this).find('hide_drop').append(hide_drop);   
+      });
+
+
+  $( ".hide_count" ).each(function( i ) {
+    $(this).attr('id', 'hide_count' + i);
+    $(this).append('<span id=\"text' +i+'\"></span>');
+      var hide_count = document.createElement('hide_count');
+      hide_count.type='text/javascript';
+    // script.innerHTML=" alert('"+i+"');";
+      $(this).find('hide_count').append(hide_count);  
+    });
+
+    $( ".hide_name" ).each(function( i ) {
+      $(this).attr('id', 'hide_name' + i);
+      $(this).append('<span id=\"text' +i+'\"></span>');
+        var hide_name = document.createElement('hide_name');
+        hide_name.type='text/javascript';
+      // script.innerHTML=" alert('"+i+"');";
+        $(this).find('hide_name').append(hide_name);  
+      });
+
+      $( ".hide_city" ).each(function( i ) {
+        $(this).attr('id', 'hide_city' + i);
+        $(this).append('<span id=\"text' +i+'\"></span>');
+          var hide_city = document.createElement('hide_city');
+          hide_city.type='text/javascript';
+        // script.innerHTML=" alert('"+i+"');";
+          $(this).find('hide_city').append(hide_city);  
+        });
+
+        $( ".hide_state" ).each(function( i ) {
+          $(this).attr('id', 'hide_state' + i);
+          $(this).append('<span id=\"text' +i+'\"></span>');
+            var hide_state = document.createElement('hide_state');
+            hide_state.type='text/javascript';
+          // script.innerHTML=" alert('"+i+"');";
+            $(this).find('hide_state').append(hide_state);  
+          });
+
+          $( ".hide_zip" ).each(function( i ) {
+            $(this).attr('id', 'hide_zip' + i);
+            $(this).append('<span id=\"text' +i+'\"></span>');
+              var hide_zip = document.createElement('hide_zip');
+              hide_zip.type='text/javascript';
+            // script.innerHTML=" alert('"+i+"');";
+              $(this).find('hide_zip').append(hide_zip);  
+            });     
+
   $('.shipment_origins').on('cocoon:after-insert', function() {
     check_to_hide_or_show_add_link();
   });
@@ -221,7 +284,8 @@ $(function() {
   check_to_hide_or_show_add_link();
 
   function check_to_hide_or_show_add_link() {
-    if ($('.shipment_origins .nested-fields').length == 5) {
+    if ($('.shipment_origins .nested-count').length == 5) {
+      // alert("Hello! I am an alert box!!");
       $('.add_origin_address').hide();
     } else {
       $('.add_origin_address').show();

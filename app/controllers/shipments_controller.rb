@@ -22,7 +22,7 @@ class ShipmentsController < ApplicationController
   # GET /shipments/1/edit
   def edit
     @shipper_receivers = ShipperReceiver.all
-    @shipment_origins = @shipment.shipment_origins
+    # @shipment_origins = @shipment.shipment_origins.order(origin_count: :asc)
   end
 
 
