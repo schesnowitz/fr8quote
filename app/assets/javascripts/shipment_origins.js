@@ -177,7 +177,6 @@ $(function() {
   });
 
 
-
   $( ".input_street" ).each(function( i ) {
   $(this).attr('id', 'input_street' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
@@ -210,7 +209,8 @@ $(function() {
     $(this).find('input_postal').append(script_postal);
   });
 
-  $( ".origin_date" ).each(function( i ) {
+  // -----------------------------
+    $( ".origin_date" ).each(function( i ) {
     $(this).attr('id', 'origin_date' + i);
     $(this).append('<select id=\"text' +i+'\"></select>');
       var origin_date = document.createElement('origin_date');
@@ -219,16 +219,15 @@ $(function() {
     });
 
     $( ".hide_drop" ).each(function( i ) {
-      $(this).attr('id', 'hide_drop' + i);
-      $(this).append('<span id=\"text' +i+'\"></span>');
-        var hide_drop = document.createElement('hide_drop');
-        hide_drop.type='text/javascript';
-      // script.innerHTML=" alert('"+i+"');";
-        $(this).find('hide_drop').append(hide_drop);   
-      });
+    $(this).attr('id', 'hide_drop' + i);
+    $(this).append('<span id=\"text' +i+'\"></span>');
+      var hide_drop = document.createElement('hide_drop');
+      hide_drop.type='text/javascript';
+    // script.innerHTML=" alert('"+i+"');";
+      $(this).find('hide_drop').append(hide_drop);   
+    });
 
-
-  $( ".hide_count" ).each(function( i ) {
+    $( ".hide_count" ).each(function( i ) {
     $(this).attr('id', 'hide_count' + i);
     $(this).append('<span id=\"text' +i+'\"></span>');
       var hide_count = document.createElement('hide_count');
@@ -238,40 +237,52 @@ $(function() {
     });
 
     $( ".hide_name" ).each(function( i ) {
-      $(this).attr('id', 'hide_name' + i);
-      $(this).append('<span id=\"text' +i+'\"></span>');
-        var hide_name = document.createElement('hide_name');
-        hide_name.type='text/javascript';
-      // script.innerHTML=" alert('"+i+"');";
-        $(this).find('hide_name').append(hide_name);  
-      });
+    $(this).attr('id', 'hide_name' + i);
+    $(this).append('<span id=\"text' +i+'\"></span>');
+      var hide_name = document.createElement('hide_name');
+      hide_name.type='text/javascript';
+    // script.innerHTML=" alert('"+i+"');";
+      $(this).find('hide_name').append(hide_name);  
+    }); 
 
-      $( ".hide_city" ).each(function( i ) {
-        $(this).attr('id', 'hide_city' + i);
-        $(this).append('<span id=\"text' +i+'\"></span>');
-          var hide_city = document.createElement('hide_city');
-          hide_city.type='text/javascript';
-        // script.innerHTML=" alert('"+i+"');";
-          $(this).find('hide_city').append(hide_city);  
-        });
+    $( ".hide_street" ).each(function( i ) {
+    $(this).attr('id', 'hide_street' + i);
+    $(this).append('<span id=\"text' +i+'\"></span>');
+      var hide_street = document.createElement('hide_street');
+      hide_street.type='text/javascript';
+    // script.innerHTML=" alert('"+i+"');";
+      $(this).find('hide_street').append(hide_street);  
+    }); 
 
-        $( ".hide_state" ).each(function( i ) {
-          $(this).attr('id', 'hide_state' + i);
-          $(this).append('<span id=\"text' +i+'\"></span>');
-            var hide_state = document.createElement('hide_state');
-            hide_state.type='text/javascript';
-          // script.innerHTML=" alert('"+i+"');";
-            $(this).find('hide_state').append(hide_state);  
-          });
+    $( ".hide_city" ).each(function( i ) {
+    $(this).attr('id', 'hide_city' + i);
+    $(this).append('<span id=\"text' +i+'\"></span>');
+      var hide_city = document.createElement('hide_city');
+      hide_city.type='text/javascript';
+    // script.innerHTML=" alert('"+i+"');";
+      $(this).find('hide_city').append(hide_city);  
+    });
 
-          $( ".hide_zip" ).each(function( i ) {
-            $(this).attr('id', 'hide_zip' + i);
-            $(this).append('<span id=\"text' +i+'\"></span>');
-              var hide_zip = document.createElement('hide_zip');
-              hide_zip.type='text/javascript';
-            // script.innerHTML=" alert('"+i+"');";
-              $(this).find('hide_zip').append(hide_zip);  
-            });     
+    $( ".hide_state" ).each(function( i ) {
+    $(this).attr('id', 'hide_state' + i);
+    $(this).append('<span id=\"text' +i+'\"></span>');
+      var hide_state = document.createElement('hide_state');
+      hide_state.type='text/javascript';
+    // script.innerHTML=" alert('"+i+"');";
+      $(this).find('hide_state').append(hide_state);  
+    });
+
+    $( ".hide_zip" ).each(function( i ) {
+    $(this).attr('id', 'hide_zip' + i);
+    $(this).append('<span id=\"text' +i+'\"></span>');
+      var hide_zip = document.createElement('hide_zip');
+      hide_zip.type='text/javascript';
+    // script.innerHTML=" alert('"+i+"');";
+      $(this).find('hide_zip').append(hide_zip);  
+    });  
+
+
+  // -----------------------------
 
   $('.shipment_origins').on('cocoon:after-insert', function() {
     check_to_hide_or_show_add_link();
@@ -284,11 +295,72 @@ $(function() {
   check_to_hide_or_show_add_link();
 
   function check_to_hide_or_show_add_link() {
-    if ($('.shipment_origins .nested-count').length == 5) {
-      // alert("Hello! I am an alert box!!");
+    if ($('.shipment_origins .nested-fields').length == 5) {
       $('.add_origin_address').hide();
     } else {
       $('.add_origin_address').show();
     }
   }
 })
+
+
+$(document).on("change", "#origin_date0", function() {
+  date = ($('#origin_date0').val());
+  // alert(date);  
+  var ids0 = "#hide_count0, #hide_drop0, #hide_name0, #hide_street0, #hide_city0, #hide_state0, #hide_zip0, #origin-rows"; 
+
+  if (date == '') { 
+  $(ids0).addClass("hidden"); 
+  } else {
+  $(ids0).removeClass("hidden"); 
+  } 
+});
+
+  $(document).on("change", "#origin_date1", function() {
+   date = ($('#origin_date1').val());
+  // alert(date);  
+  var ids1 = "#hide_count1, #hide_drop1, #hide_name1, #hide_street1, #hide_city1, #hide_state1, #hide_zip1";
+
+  if (date == '') { 
+  $(ids1).addClass("hidden"); 
+  } else {
+  $(ids1).removeClass("hidden"); 
+  } 
+});
+
+  $(document).on("change", "#origin_date2", function() {
+   date = ($('#origin_date2').val());
+  // alert(date);  
+  var ids2 = "#hide_count2, #hide_drop2, #hide_name2, #hide_street2, #hide_city2, #hide_state2, #hide_zip2";
+
+  if (date == '') { 
+  $(ids2).addClass("hidden"); 
+  } else {
+  $(ids2).removeClass("hidden"); 
+  } 
+});
+
+  $(document).on("change", "#origin_date3", function() {
+   date = ($('#origin_date3').val());
+  // alert(date);  
+  var ids3 = "#hide_count3, #hide_drop3, #hide_name3, #hide_street3, #hide_city3, #hide_state3, #hide_zip3";
+
+  if (date == '') { 
+  $(ids3).addClass("hidden"); 
+  } else {
+  $(ids3).removeClass("hidden"); 
+  } 
+}); 
+
+
+  $(document).on("change", "#origin_date4", function() {
+   date = ($('#origin_date4').val());
+  // alert(date);  
+  var ids4 = "#hide_count4, #hide_drop4, #hide_name4, #hide_street4, #hide_city4, #hide_state4, #hide_zip4";
+
+  if (date == '') { 
+  $(ids4).addClass("hidden"); 
+  } else {
+  $(ids4).removeClass("hidden"); 
+  } 
+});

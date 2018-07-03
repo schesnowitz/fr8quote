@@ -137,9 +137,8 @@
 
 <table>
   <thead>
-    <tr>
-      <th></th>
-
+    <tr class='hidden' id='origin-rows'>
+      <th>----</th>
       <th>Pick Up Date</th>
       <th>Shipper</th>
       <th>#</th>
@@ -164,12 +163,14 @@
     <div class="form-actions">
 
       <%= f.button :submit %>
-          <%= link_to_add_association 'Add Origin Address', f, :shipment_origins, class: 'btn btn-primary add_origin_address', data: { association_insertion_node: '.shipment_origins', association_insertion_method: :append } %>
+          <%= link_to_add_association 'Add Origin Address', f, :shipment_origins, class: 'btn btn-primary add_origin_address',id: 'add-category', data: { association_insertion_node: '.shipment_origins', association_insertion_method: :append } %>
     </div>
   </div>
 </div>
 </div>
-<% end %>
 
+
+
+<% end %>
 
 

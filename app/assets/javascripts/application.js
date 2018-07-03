@@ -19,7 +19,7 @@
 //= require chosen
 //= require cocoon
 //= require shipment_origins.js
-//= require shipment_destinations.js 
+
 
 
 //= require jquery.scrollbar/jquery.scrollbar.min.js
