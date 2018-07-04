@@ -5,10 +5,10 @@ class Shipment < ApplicationRecord
   has_many :shipment_origins, -> { order :origin_count }, dependent: :destroy 
 
   accepts_nested_attributes_for :shipment_origins,
-                                allow_destroy: true,
-                                # reject_if: proc{ |attribute| attribute['name'].blank? }
-                                reject_if: :all_blank  
-  validates :shipment_origins, presence: true  
+                                allow_destroy: true
+  
+                                
+  # validates_associated :shipment_origins, presence: true
 
   Commodity = 
 [
