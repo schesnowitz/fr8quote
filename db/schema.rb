@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_17_230713) do
+ActiveRecord::Schema.define(version: 2018_07_04_054744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -171,6 +171,14 @@ ActiveRecord::Schema.define(version: 2018_06_17_230713) do
   create_table "shipperizations", force: :cascade do |t|
     t.integer "shipment_id"
     t.integer "shipper_receiver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string "url"
+    t.string "string1"
+    t.string "string2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

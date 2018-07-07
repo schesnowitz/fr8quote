@@ -22,6 +22,7 @@
 
 
 
+
 //= require jquery.scrollbar/jquery.scrollbar.min.js
 //= require jquery-scrollLock/jquery-scrollLock.min.js
 //= require salvattore/dist/salvattore.min.js
@@ -46,3 +47,12 @@
 //= require local-time.js 
 //= require masked.js 
 
+
+window.document.onkeydown = function(e) {
+  if (!e) {
+    e = event;
+  }
+  if (e.keyCode == 27) {
+    lightbox_close();
+  }
+}
