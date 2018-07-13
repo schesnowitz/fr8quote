@@ -1,5 +1,10 @@
-generate_random_user:
-  cron: "* * * * *"
-  class: "GenerateRandomUserJob"
+play_video:
+  cron: "10 * * * *"
+  class: "PlayVideoJob" 
+  queue: default
+
+play_video2:
+  cron: "5 * * * *"
+  class: "PlayVideoJob2" 
   queue: default
  

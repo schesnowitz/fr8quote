@@ -4,14 +4,9 @@ app_setting = AppSetting.create!(
   theme_color: '2'
 )
 
-app_setting = AppSetting.find_or_initialize_by(id: 1)
-app_setting.hidden_sidebar = false
-app_setting.theme_color = '8'
-app_setting.save 
-puts app_setting.inspect
 
-50.times do
-sr = ShipperReceiver.create!(
+5.times do
+sr = ShipperReceiver.create!( 
   :name => Faker::Company.name,
   :street => Faker::Address.street_address,
   :city => Faker::Address.city,

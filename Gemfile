@@ -37,7 +37,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15', '< 4.0'
+
   # gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   # gem 'chromedriver-helper'
@@ -49,9 +49,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'nanoboxifier'
 gem 'pg', '~> 1.0'
 gem 'faker', '~> 1.8', '>= 1.8.7'
-# source 'https://rails-assets.org' do
+source 'https://rails-assets.org' do
   gem 'rails-assets-chosen-bootstrap' # if using bootstrap
-# end
+end
 
 gem 'jquery-rails'
 gem 'simple_form', '~> 4.0', '>= 4.0.1' 
@@ -68,5 +68,8 @@ gem 'httparty', '~> 0.15.6'
 gem 'local_time', '~> 2.0'
 gem 'bootstrap', '~> 4.1.1'
 gem "cocoon" 
+gem 'capybara', '>= 2.15', '< 4.0'
 gem 'poltergeist'
 gem 'phantomjs', :require => 'phantomjs/poltergeist' 
+gem "webdrivers", "~> 3.0"
+gem 'selenium-webdriver', '~> 3.13'

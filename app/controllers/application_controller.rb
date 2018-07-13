@@ -9,4 +9,11 @@ class ApplicationController < ActionController::Base
     flash[:danger] = 'You are not authorized to access this area'
     redirect_back(fallback_location: root_path)
   end 
+
+
+  def admin_only
+    if !current_user.try(:is_admin?)
+      the_fallback
+    end
+  end
 end
