@@ -1,6 +1,4 @@
-:queues:
-  - default
-  - mailers
+
 
 
 Sidekiq.configure_server do |config|

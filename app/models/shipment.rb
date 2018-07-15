@@ -6,17 +6,17 @@ class Shipment < ApplicationRecord
 
   accepts_nested_attributes_for :shipment_origins,
                                 allow_destroy: true,
-                                # reject_if: proc{ |attribute| attribute['name'].blank? }
-                                reject_if: :all_blank  
-  validates :shipment_origins, presence: true  
-
+                                reject_if: proc{ |attribute| attribute['origin_name'].blank? }
+  #                               reject_if: :all_blank  
+  validates :shipment_origins, presence: true       
+    
   Commodity = 
 [
   "Household Goods",
   "Metal - sheets, coils, rolls",        
   'Motor Vehicles',
   'Drive/Tow away',
-  'Logs, Poles, Beams, Lumber',
+  'Logs, Poles, Beams, Lumber', 
   'Building Materials',
   'Machinery',
   'Fresh Produce',

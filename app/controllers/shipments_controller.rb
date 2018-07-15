@@ -33,10 +33,10 @@ class ShipmentsController < ApplicationController
     @shipper_receivers = ShipperReceiver.all
     @shipment = Shipment.new(shipment_params)
 
-    @shipment_origins = @shipment.shipment_origins.build
+    # @shipment_origins = @shipment.shipment_origins.build
     respond_to do |format|
       if @shipment.save 
-        format.html { redirect_to @shipment, notice: 'Shipment was successfully updated.' }
+        format.html { redirect_to @shipment, notice: 'Shipment was successfully created.' }
         format.json { render :show, status: :created, location: @shipment }
       else
         flash[:danger] = "#{@shipment.errors.full_messages.to_sentence}"
@@ -74,14 +74,6 @@ class ShipmentsController < ApplicationController
   end
 
 
-  def shipment_addresses
-
-    @shipment = Shipment.find(params[:shipment_id])
-    @shipper_receivers = ShipperReceiver.all
-    # @shipper_receiver = @shipment.shipper_receivers.build
-    # @shipment_origins = @shipment.shipment_origins.build
-
-  end
 
 
   private
