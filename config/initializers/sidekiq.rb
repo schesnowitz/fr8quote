@@ -1,3 +1,8 @@
+:queues:
+  - default
+  - mailers
+
+
 Sidekiq.configure_server do |config|
   config.redis = { url: "redis://#{ENV['DATA_QUEUE_HOST']}:6379/1" }
 end
