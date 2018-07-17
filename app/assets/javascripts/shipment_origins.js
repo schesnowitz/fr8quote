@@ -218,6 +218,17 @@ $(function() {
       $(this).find('origin_date').append(origin_date);
     });
 
+
+
+    $( ".hide_enter_manually" ).each(function( i ) {
+      $(this).attr('id', 'hide_enter_manually' + i);
+      $(this).append('<span id=\"text' +i+'\"></span>');
+        var hide_enter_manually = document.createElement('hide_enter_manually');
+        hide_enter_manually.type='text/javascript';
+      // script.innerHTML=" alert('"+i+"');";
+        $(this).find('hide_enter_manually').append(hide_enter_manually);   
+      });
+
     $( ".hide_drop" ).each(function( i ) {
     $(this).attr('id', 'hide_drop' + i);
     $(this).append('<span id=\"text' +i+'\"></span>');
@@ -307,7 +318,7 @@ $(function() {
 $(document).on("change", "#origin_date0", function() {
   date = ($('#origin_date0').val());
   // alert(date);  
-  var ids0 = "#hide_count0, #hide_drop0, #hide_name0, #hide_street0, #hide_city0, #hide_state0, #hide_zip0, #origin-rows"; 
+  var ids0 = "#hide_count0, #hide_drop0, #hide_name0, #hide_street0, #hide_city0, #hide_state0, #hide_zip0, #origin-rows, #hide_enter_manually0"; 
 
   if (date == '') { 
   $(ids0).addClass("hidden"); 
@@ -319,7 +330,7 @@ $(document).on("change", "#origin_date0", function() {
   $(document).on("change", "#origin_date1", function() {
    date = ($('#origin_date1').val());
   // alert(date);  
-  var ids1 = "#hide_count1, #hide_drop1, #hide_name1, #hide_street1, #hide_city1, #hide_state1, #hide_zip1";
+  var ids1 = "#hide_count1, #hide_drop1, #hide_name1, #hide_street1, #hide_city1, #hide_state1, #hide_zip1, #hide_enter_manually1";
 
   if (date == '') { 
   $(ids1).addClass("hidden"); 
@@ -331,7 +342,7 @@ $(document).on("change", "#origin_date0", function() {
   $(document).on("change", "#origin_date2", function() {
    date = ($('#origin_date2').val());
   // alert(date);  
-  var ids2 = "#hide_count2, #hide_drop2, #hide_name2, #hide_street2, #hide_city2, #hide_state2, #hide_zip2";
+  var ids2 = "#hide_count2, #hide_drop2, #hide_name2, #hide_street2, #hide_city2, #hide_state2, #hide_zip2, #hide_enter_manually2";
 
   if (date == '') { 
   $(ids2).addClass("hidden"); 
@@ -343,7 +354,7 @@ $(document).on("change", "#origin_date0", function() {
   $(document).on("change", "#origin_date3", function() {
    date = ($('#origin_date3').val());
   // alert(date);  
-  var ids3 = "#hide_count3, #hide_drop3, #hide_name3, #hide_street3, #hide_city3, #hide_state3, #hide_zip3";
+  var ids3 = "#hide_count3, #hide_drop3, #hide_name3, #hide_street3, #hide_city3, #hide_state3, #hide_zip3, #hide_enter_manually3";
 
   if (date == '') { 
   $(ids3).addClass("hidden"); 
@@ -356,7 +367,7 @@ $(document).on("change", "#origin_date0", function() {
   $(document).on("change", "#origin_date4", function() {
    date = ($('#origin_date4').val());
   // alert(date);  
-  var ids4 = "#hide_count4, #hide_drop4, #hide_name4, #hide_street4, #hide_city4, #hide_state4, #hide_zip4";
+  var ids4 = "#hide_count4, #hide_drop4, #hide_name4, #hide_street4, #hide_city4, #hide_state4, #hide_zip4, #hide_enter_manually4";
 
   if (date == '') { 
   $(ids4).addClass("hidden"); 
@@ -364,3 +375,60 @@ $(document).on("change", "#origin_date0", function() {
   $(ids4).removeClass("hidden"); 
   } 
 });
+
+
+$( ".enter_manually" ).each(function( i ) {
+  $(this).attr('id', 'enter_manually' + i);
+  $(this).append('<input id=\"text' +i+'\"></input>');
+    var enter_manually = document.createElement('enter_manually');
+    enter_manually.type='text/javascript';
+  // script.innerHTML=" alert('"+i+"');";
+    $(this).find('enter_manually').append(enter_manually);   
+  }); 
+
+
+// input_name0
+$(function(){
+
+  ids_0 = '#input_name0, #input_street0, #input_city0, #input_state0,       #input_postal0' 
+  $('#enter_manually0').click(function() {
+      if($(this).is(':checked')) 
+      $(ids_0).attr('readonly', false);
+      // alert('0checked');
+      else
+      $(ids_0).attr('readonly', true); 
+  });
+});
+$(function(){
+  $('#enter_manually1').click(function() {
+      if($(this).is(':checked')) 
+          alert('1checked');
+      else
+          alert('1unchecked'); 
+  });
+});
+$(function(){
+  $('#enter_manually2').click(function() {
+    if($(this).is(':checked')) 
+        alert('2checked');
+    else
+        alert('2unchecked'); 
+  });
+});
+$(function(){
+  $('#enter_manually3').click(function() {
+    if($(this).is(':checked')) 
+      alert('3checked');
+    else
+      alert('3unchecked'); 
+  });
+});
+$(function(){
+  $('#enter_manually4').click(function() {
+    if($(this).is(':checked')) 
+      alert('4checked');
+    else
+      alert('4unchecked'); 
+  });
+});
+

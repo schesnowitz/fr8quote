@@ -80,7 +80,8 @@ class ShipmentOriginsController < ApplicationController
         :origin_contact_person, 
         :origin_notes, 
         :shipment_id,
-        :origin_count
+        :origin_count,
+        :enter_manually
       )
     end
 end

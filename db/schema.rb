@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 2018_06_17_230713) do
     t.integer "shipment_id"
     t.integer "origin_count"
     t.string "origin_drop"
+    t.boolean "enter_manually", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shipment_id"], name: "index_shipment_origins_on_shipment_id"

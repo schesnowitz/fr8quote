@@ -12,7 +12,7 @@ class CreateShipmentOrigins < ActiveRecord::Migration[5.2]
       t.integer :shipment_id, index: true
       t.integer :origin_count
       t.string :origin_drop
-
+      t.boolean :enter_manually, default: false
       t.timestamps
     end
   end

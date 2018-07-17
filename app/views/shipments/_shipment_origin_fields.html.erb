@@ -8,11 +8,16 @@
 <%= f.date_field :origin_date, label: false, class: 'origin_date' %>
 </td> 
 
-  <td>
+
+
+
+
+<td>
 <span class='hide_drop hidden' id='hide_drop'>
     <%= select_tag "shipper_receivers", 
           options_for_select(@shipper_receivers.map{ |sr| [sr.name, sr.id, data: { url: shipper_receivers_path(sr) }]}), 
           class: 'chosen_origin_shipper_receivers', include_blank: "search shippers" %>
+          
 </span>
 <br>
 <span class='hidden'>
@@ -36,12 +41,21 @@
 
 
 
-
 <td>
 <span class='hide_count hidden' id='hide_count'>
 <%= f.input :origin_count, label: false, input_html: { class: 'origin_count' }, readonly: true %>
 </span>
 </td>
+<td>
+  <span class='hide_enter_manually hidden' id='hide_enter_manually'>
+  <%= f.check_box :enter_manually, label: false,  class: 'enter_manually'  %>
+  </span> 
+
+
+</td>
+
+
+
 
 <td>
 <span class='hide_name hidden' id='hide_name'>

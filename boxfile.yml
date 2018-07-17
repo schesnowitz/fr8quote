@@ -10,7 +10,7 @@ run.config:
     - libxslt
     - ImageMagick
     - phantomjs
-    - ffmpeg3-3.4
+
 
 
 
