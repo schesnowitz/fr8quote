@@ -17,8 +17,8 @@
 //= require rails-ujs
 //= require activestorage
 //= require chosen
-//= require cocoon
-//= require shipment_origins.js
+//= require cocoon 
+
 
 
 

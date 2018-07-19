@@ -20,7 +20,7 @@ $(function() {
     postal_code = ($('#sr_postal0').find("option:selected").text());
     $("#input_postal0").val(postal_code);
 
-    $("#origin_count0").val(1);
+    
   });
 
   // ---------------
@@ -410,17 +410,6 @@ $(function(){
   });
 });
 
-$(function(){
-  $('#enter_manually0').click(function() {
-      if($(this).is(':checked')) 
-        $("#origin_count0").val(1); 
-      // alert('0checked');
-      else
-        $("#origin_count0").val(''); 
-  });
-});
-
-
 
 // #enter_manually1 click
 $(function(){
@@ -464,16 +453,6 @@ $(function(){
   });
 });
 
-$(function(){
-  $('#enter_manually2').click(function() {
-      if($(this).is(':checked')) 
-        $("#origin_count2").val(1); 
-      // alert('2checked');
-      else
-        $("#origin_count2").val(''); 
-  });
-});
-
 
 // #enter_manually3
 $(function(){
@@ -496,15 +475,6 @@ $(function(){
   });
 });
 
-$(function(){
-  $('#enter_manually3').click(function() {
-      if($(this).is(':checked')) 
-        $("#origin_count3").val(1); 
-      // alert('3checked');
-      else
-        $("#origin_count3").val(''); 
-  });
-});
 
 // #enter_manually4
 $(function(){
@@ -526,15 +496,4 @@ $(function(){
       $( "#hide_drop4" ).removeClass( "hidden" );
   });
 });
-
-// $(function(){
-//   $('#enter_manually4').click(function() {
-//       if($(this).is(':checked')) 
-//         $("#origin_count4").val(1); 
-//       // alert('4checked');
-//       else
-//         $("#origin_count4").val(''); 
-//   });
-// });
-
 
