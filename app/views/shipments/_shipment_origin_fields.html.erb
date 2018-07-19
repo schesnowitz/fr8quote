@@ -11,14 +11,21 @@
 
 
 
-
 <td>
+
 <span class='hide_drop hidden' id='hide_drop'>
     <%= select_tag "shipper_receivers", 
           options_for_select(@shipper_receivers.map{ |sr| [sr.name, sr.id, data: { url: shipper_receivers_path(sr) }]}), 
           class: 'chosen_origin_shipper_receivers', include_blank: "search shippers" %>
           
 </span>
+
+  <span class='hide_enter_manually hidden' id='hide_enter_manually'>
+<span class="badge badge-primary"><i class="zmdi zmdi-settings zmdi-hc-spin"></i> Can't find the shipper? <br> Select to enter the info manually. <br><br> <%= f.check_box :enter_manually, label: false,  class: 'enter_manually'  %></span> 
+
+
+  
+  </span> 
 <br>
 <span class='hidden'>
     <%= select_tag "shipper_receivers", 
@@ -46,13 +53,10 @@
 <%= f.input :origin_count, label: false, input_html: { class: 'origin_count' }, readonly: true %>
 </span>
 </td>
-<td>
-  <span class='hide_enter_manually hidden' id='hide_enter_manually'>
-  <%= f.check_box :enter_manually, label: false,  class: 'enter_manually'  %>
-  </span> 
 
 
-</td>
+
+
 
 
 

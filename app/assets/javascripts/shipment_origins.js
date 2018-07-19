@@ -327,6 +327,8 @@ $(document).on("change", "#origin_date0", function() {
   } 
 });
 
+
+
   $(document).on("change", "#origin_date1", function() {
    date = ($('#origin_date1').val());
   // alert(date);  
@@ -387,48 +389,152 @@ $( ".enter_manually" ).each(function( i ) {
   }); 
 
 
-// input_name0
+// #enter_manually0 click
 $(function(){
-
   ids_0 = '#input_name0, #input_street0, #input_city0, #input_state0,       #input_postal0' 
   $('#enter_manually0').click(function() {
       if($(this).is(':checked')) 
-      $(ids_0).attr('readonly', false);
-      // alert('0checked');
+        $(ids_0).attr('readonly', false);
       else
-      $(ids_0).attr('readonly', true); 
+        $(ids_0).attr('readonly', true); 
   });
 });
+
+$(function(){
+  $('#enter_manually0').click(function() {
+      if($(this).is(':checked')) 
+      $( "#hide_drop0" ).addClass( "hidden" );
+      // alert('0checked');
+      else
+      $( "#hide_drop0" ).removeClass( "hidden" );
+  });
+});
+
+$(function(){
+  $('#enter_manually0').click(function() {
+      if($(this).is(':checked')) 
+        $("#origin_count0").val(1); 
+      // alert('0checked');
+      else
+        $("#origin_count0").val(''); 
+  });
+});
+
+
+
+// #enter_manually1 click
+$(function(){
+  ids_1 = '#input_name1, #input_street1, #input_city1, #input_state1,       #input_postal1' 
+  $('#enter_manually1').click(function() {
+      if($(this).is(':checked')) 
+        $(ids_1).attr('readonly', false);
+      else
+        $(ids_1).attr('readonly', true); 
+  });
+});
+
 $(function(){
   $('#enter_manually1').click(function() {
       if($(this).is(':checked')) 
-          alert('1checked');
+      $( "#hide_drop1" ).addClass( "hidden" );
+      // alert('1checked');
       else
-          alert('1unchecked'); 
+      $( "#hide_drop1" ).removeClass( "hidden" );
   });
 });
+
+// #enter_manually2
+$(function(){
+  ids_2 = '#input_name2, #input_street2, #input_city2, #input_state2,       #input_postal2' 
+  $('#enter_manually2').click(function() {
+      if($(this).is(':checked')) 
+        $(ids_2).attr('readonly', false);
+      else
+        $(ids_2).attr('readonly', true); 
+  });
+});
+
 $(function(){
   $('#enter_manually2').click(function() {
-    if($(this).is(':checked')) 
-        alert('2checked');
-    else
-        alert('2unchecked'); 
+      if($(this).is(':checked')) 
+      $( "#hide_drop2" ).addClass( "hidden" );
+      // alert('2checked');
+      else
+      $( "#hide_drop2" ).removeClass( "hidden" );
   });
 });
+
+$(function(){
+  $('#enter_manually2').click(function() {
+      if($(this).is(':checked')) 
+        $("#origin_count2").val(1); 
+      // alert('2checked');
+      else
+        $("#origin_count2").val(''); 
+  });
+});
+
+
+// #enter_manually3
+$(function(){
+  ids_3 = '#input_name3, #input_street3, #input_city3, #input_state3,       #input_postal3' 
+  $('#enter_manually3').click(function() {
+      if($(this).is(':checked')) 
+        $(ids_3).attr('readonly', false);
+      else
+        $(ids_3).attr('readonly', true); 
+  });
+});
+
 $(function(){
   $('#enter_manually3').click(function() {
-    if($(this).is(':checked')) 
-      alert('3checked');
-    else
-      alert('3unchecked'); 
+      if($(this).is(':checked')) 
+      $( "#hide_drop3" ).addClass( "hidden" );
+      // alert('3checked');
+      else
+      $( "#hide_drop3" ).removeClass( "hidden" );
   });
 });
+
+$(function(){
+  $('#enter_manually3').click(function() {
+      if($(this).is(':checked')) 
+        $("#origin_count3").val(1); 
+      // alert('3checked');
+      else
+        $("#origin_count3").val(''); 
+  });
+});
+
+// #enter_manually4
+$(function(){
+  ids_4 = '#input_name4, #input_street4, #input_city4, #input_state4,       #input_postal4' 
+  $('#enter_manually4').click(function() {
+      if($(this).is(':checked')) 
+        $(ids_4).attr('readonly', false);
+      else
+        $(ids_4).attr('readonly', true); 
+  });
+});
+
 $(function(){
   $('#enter_manually4').click(function() {
-    if($(this).is(':checked')) 
-      alert('4checked');
-    else
-      alert('4unchecked'); 
+      if($(this).is(':checked')) 
+      $( "#hide_drop4" ).addClass( "hidden" );
+      // alert('4checked');
+      else
+      $( "#hide_drop4" ).removeClass( "hidden" );
   });
 });
+
+// $(function(){
+//   $('#enter_manually4').click(function() {
+//       if($(this).is(':checked')) 
+//         $("#origin_count4").val(1); 
+//       // alert('4checked');
+//       else
+//         $("#origin_count4").val(''); 
+//   });
+// });
+
 
