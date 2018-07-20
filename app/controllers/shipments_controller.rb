@@ -16,7 +16,6 @@ class ShipmentsController < ApplicationController
   def new
     @shipment = Shipment.new
     @shipper_receivers = ShipperReceiver.all
-
   end
 
   # GET /shipments/1/edit
@@ -153,7 +152,8 @@ class ShipmentsController < ApplicationController
                                         :vehcile_id,
                                         :shipper_receiver_id, 
                                         shipment_origins_attributes: 
-                                        ShipmentOrigin.attribute_names.map(&:to_sym).push(:_destroy))
+                                        ShipmentOrigin.attribute_names.map(&:to_sym).push(:_destroy),
+                                        shipper_receivers_attributes: [ :name ])
     end
 end
 

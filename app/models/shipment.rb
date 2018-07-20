@@ -6,11 +6,12 @@ class Shipment < ApplicationRecord
 
   accepts_nested_attributes_for :shipment_origins,
                                 allow_destroy: true
-  
+  accepts_nested_attributes_for :shipper_receivers,
+                                allow_destroy: true
                                 
   # validates_associated :shipment_origins, presence: true
 
-  Commodity = 
+  Commodity =  
 [
   "Household Goods",
   "Metal - sheets, coils, rolls",        

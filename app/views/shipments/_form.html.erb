@@ -132,7 +132,8 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> 
+    
 
 
 
@@ -154,8 +155,10 @@
   </thead>
 
   <tbody class='shipment_origins'>
+  
       <%= f.simple_fields_for :shipment_origins do |builder| %>
         <%= render 'shipment_origin_fields', f: builder %>
+
       <% end %>
   </tbody>
 </table>
@@ -163,7 +166,6 @@
 
 
     <div class="form-actions">
-
       <%= f.button :submit %>
           <%= link_to_add_association 'Add Origin Address', f, :shipment_origins, class: 'btn btn-primary add_origin_address',id: 'add-category', data: { association_insertion_node: '.shipment_origins', association_insertion_method: :append } %>
     </div>
