@@ -210,6 +210,17 @@ $(function() {
   });
 
   // -----------------------------
+
+    $( ".origin_checkbox_text" ).each(function( i ) {
+    $(this).attr('id', 'origin_checkbox_text' + i);
+    $(this).append('<span id=\"text' +i+'\"></span>');
+      var origin_checkbox_text = document.createElement('origin_checkbox_text');
+      origin_checkbox_text.type='text/javascript';
+    // script.innerHTML=" alert('"+i+"');";
+      $(this).find('origin_checkbox_text').append(origin_checkbox_text);  
+    });
+
+
     $( ".origin_date" ).each(function( i ) {
     $(this).attr('id', 'origin_date' + i);
     $(this).append('<select id=\"text' +i+'\"></select>');
@@ -384,7 +395,6 @@ $( ".enter_manually" ).each(function( i ) {
   $(this).append('<input id=\"text' +i+'\"></input>');
     var enter_manually = document.createElement('enter_manually');
     enter_manually.type='text/javascript';
-  // script.innerHTML=" alert('"+i+"');";
     $(this).find('enter_manually').append(enter_manually);   
   }); 
 
@@ -401,16 +411,34 @@ $(function(){
 });
 
 $(function(){
+  ids_0 = '#input_name0, #input_street0, #input_city0, #input_state0,       #input_postal0' 
   $('#enter_manually0').click(function() {
       if($(this).is(':checked')) 
-      $( "#hide_drop0" ).addClass( "hidden" );
-      // alert('0checked');
+        $(ids_0).val('');
       else
-      $( "#hide_drop0" ).removeClass( "hidden" );
+        $(ids_0).val('');
   });
 });
 
+$(function(){
+  $('#enter_manually0').click(function() {
+      if($(this).is(':checked')) 
+        $( "#hide_drop0" ).addClass( "hidden" );
+      else
+        $( "#hide_drop0" ).removeClass( "hidden" );
+  });
+});
 
+$(function(){
+  $('#enter_manually0').click(function() {
+      if($(this).is(':checked')) 
+        $( "#origin_checkbox_text0" ).html( "Enter the Shippers info." );
+      else
+        $( "#origin_checkbox_text0" ).html( "Can't find the shipper?" + "<br>" +
+        "Select to enter the info manually." );
+  });
+
+});
 // #enter_manually1 click
 $(function(){
   ids_1 = '#input_name1, #input_street1, #input_city1, #input_state1,       #input_postal1' 
@@ -423,12 +451,31 @@ $(function(){
 });
 
 $(function(){
+  ids_1 = '#input_name1, #input_street1, #input_city1, #input_state1,       #input_postal1' 
   $('#enter_manually1').click(function() {
       if($(this).is(':checked')) 
-      $( "#hide_drop1" ).addClass( "hidden" );
-      // alert('1checked');
+        $(ids_1).val('');
       else
-      $( "#hide_drop1" ).removeClass( "hidden" );
+        $(ids_1).val('');
+  });
+});
+
+$(function(){
+  $('#enter_manually1').click(function() {
+      if($(this).is(':checked')) 
+        $( "#hide_drop1" ).addClass( "hidden" );
+      else
+        $( "#hide_drop1" ).removeClass( "hidden" );
+  });
+});
+
+$(function(){
+  $('#enter_manually1').click(function() {
+      if($(this).is(':checked')) 
+        $( "#origin_checkbox_text1" ).html( "Enter the Shippers info." );
+      else
+        $( "#origin_checkbox_text1" ).html( "Can't find the shipper?" + "<br>" +
+        "Select to enter the info manually." );
   });
 });
 
@@ -444,16 +491,33 @@ $(function(){
 });
 
 $(function(){
+  ids_2 = '#input_name2, #input_street2, #input_city2, #input_state2,       #input_postal2' 
   $('#enter_manually2').click(function() {
       if($(this).is(':checked')) 
-      $( "#hide_drop2" ).addClass( "hidden" );
-      // alert('2checked');
+        $(ids_2).val('');
       else
-      $( "#hide_drop2" ).removeClass( "hidden" );
+        $(ids_2).val('');
   });
 });
 
+$(function(){
+  $('#enter_manually2').click(function() {
+      if($(this).is(':checked')) 
+        $( "#hide_drop2" ).addClass( "hidden" );
+      else
+        $( "#hide_drop2" ).removeClass( "hidden" );
+  });
+});
 
+$(function(){
+  $('#enter_manually2').click(function() {
+      if($(this).is(':checked')) 
+        $( "#origin_checkbox_text2" ).html( "Enter the Shippers info." );
+      else
+        $( "#origin_checkbox_text2" ).html( "Can't find the shipper?" + "<br>" +
+        "Select to enter the info manually." );
+  });
+});
 // #enter_manually3
 $(function(){
   ids_3 = '#input_name3, #input_street3, #input_city3, #input_state3,       #input_postal3' 
@@ -464,18 +528,33 @@ $(function(){
         $(ids_3).attr('readonly', true); 
   });
 });
+$(function(){
+  ids_3 = '#input_name3, #input_street3, #input_city3, #input_state3,       #input_postal3' 
+  $('#enter_manually3').click(function() {
+      if($(this).is(':checked')) 
+        $(ids_3).val('');
+      else
+        $(ids_3).val('');
+  });
+});
+$(function(){
+  $('#enter_manually3').click(function() {
+      if($(this).is(':checked')) 
+        $( "#hide_drop3" ).addClass( "hidden" );
+      else
+        $( "#hide_drop3" ).removeClass( "hidden" );
+  });
+});
 
 $(function(){
   $('#enter_manually3').click(function() {
       if($(this).is(':checked')) 
-      $( "#hide_drop3" ).addClass( "hidden" );
-      // alert('3checked');
+        $( "#origin_checkbox_text3" ).html( "Enter the Shippers info." );
       else
-      $( "#hide_drop3" ).removeClass( "hidden" );
+        $( "#origin_checkbox_text3" ).html( "Can't find the shipper?" + "<br>" +
+        "Select to enter the info manually." );
   });
 });
-
-
 // #enter_manually4
 $(function(){
   ids_4 = '#input_name4, #input_street4, #input_city4, #input_state4,       #input_postal4' 
@@ -486,14 +565,31 @@ $(function(){
         $(ids_4).attr('readonly', true); 
   });
 });
+$(function(){
+  ids_4 = '#input_name4, #input_street4, #input_city4, #input_state4,       #input_postal4' 
+  $('#enter_manually4').click(function() {
+      if($(this).is(':checked')) 
+        $(ids_4).val('');
+      else
+        $(ids_4).val('');
+  });
+});
+$(function(){
+  $('#enter_manually4').click(function() {
+      if($(this).is(':checked')) 
+        $( "#hide_drop4" ).addClass( "hidden" );
+      else
+        $( "#hide_drop4" ).removeClass( "hidden" );
+  });
+});
 
 $(function(){
   $('#enter_manually4').click(function() {
       if($(this).is(':checked')) 
-      $( "#hide_drop4" ).addClass( "hidden" );
-      // alert('4checked');
+        $( "#origin_checkbox_text4" ).html( "Enter the Shippers info." );
       else
-      $( "#hide_drop4" ).removeClass( "hidden" );
+        $( "#origin_checkbox_text4" ).html( "Can't find the shipper?" + "<br>" +
+        "Select to enter the info manually." );
   });
 });
 
@@ -534,7 +630,7 @@ $(document).on("change", "#origin_date0", function() {
   $(document).on("change", "#origin_date3", function() {
   date = ($('#origin_date3').val());
 
-
+ 
   if (date == '') { 
   $("#origin_count3").val(''); 
   } else {

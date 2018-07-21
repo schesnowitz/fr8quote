@@ -1,0 +1,172 @@
+<div data-turbolinks="false">
+  <%= simple_form_for(@shipment) do |f| %>
+  <div class="card">
+    <div class="card-header">
+      <% if action_name == "new" %>
+      <h3>New Shipment</h3>
+      <% end %>
+      <% if action_name == "edit" %>
+      <h3>Edit Shipment</h3>
+      <% end %>
+      <div class='row'>
+        <div class="quick-stats__item col-md-3">
+          <div class="quick-stats__info">
+            <h2>987,459</h2>
+            <small>Select Vehicle</small>
+            <%= f.input :vehcile_id, input_html: { class: 'form-control form-control-sm' } %>
+          </div>
+          <div class="quick-stats__chart peity-bar">6,4,8,6,5,6,7,8,3,5,9</div>
+        </div>
+        <div class="quick-stats__item col-md-3">
+          <div class="quick-stats__info">
+            <h2>987,459</h2>
+            <small>Select Broker</small>
+            <%= f.input :broker_profile_id, input_html: { class: 'form-control form-control-sm' } %>
+          </div>
+          <div class="quick-stats__chart peity-bar">6,4,8,6,5,6,7,8,3,5,9</div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class=col>
+          <div class="card border-dark">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <%= f.input :invoice_price, input_html: { class: 'form-control form-control-sm' } %>
+              <%= f.input :booking_fee, input_html: { class: 'form-control form-control-sm' } %>
+              <%= f.input :percent_deducted, input_html: { class: 'form-control form-control-sm' } %>
+              <%= f.input :percent_coverted_to_dollars, input_html: { class: 'form-control form-control-sm' } %>
+              <%= f.input :rate_to_owner_operator, input_html: { class: 'form-control form-control-sm' } %>
+            </div>
+          </div>
+        </div>
+        <div class=col>
+          <div class="card text-white bg-success">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <%= f.input :load_size, input_html: { class: 'form-control form-control-sm' } %>
+              <%= f.input :broker_shipper_load_id, input_html: { class: 'form-control form-control-sm' } %>
+              <strong>Booking Status:</strong>
+              <%= f.select :status_name, Shipment::ShipmentStatus, input_html: { class: 'form-control form-control-sm' }, include_blank: true %><br><br>
+              <%= f.input :dimentions, input_html: { class: 'form-control form-control-sm' }  %>
+              <%= f.input :description, input_html: { class: 'form-control form-control-sm' }  %>
+              <strong>Commodity: </strong>
+              <%= f.select :commodity, Shipment::Commodity, input_html: { class: 'form-control form-control-sm' }, include_blank: true %>
+            </div>
+          </div>
+        </div>
+        <div class=col>
+          <div class="card border-primary">
+            <div class="card-header">Header</div>
+            <div class="card-body text-primary">
+              <%= f.input :broker_rep_name, input_html: { class: 'form-control form-control-sm' } %>
+              <%= f.input :broker_rep_email, input_html: { class: 'form-control form-control-sm' } %>
+              <%= f.input :broker_rep_number, input_html: { class: 'form-control form-control-sm' } %>
+              <%= f.input :broker_rep_cell, input_html: { class: 'form-control form-control-sm' } %>
+              <%= f.input :broker_after_hours_instructions, input_html: { class: 'form-control form-control-sm' } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col'>
+          <div class="card border-dark">
+            <div class="card-header">Header</div>
+            <div class="card-body text-light">
+              <div id="show_hide_is_pounds_check">
+                <h4><%= f.input :is_pounds, label: "Enter weight in pounds" %></h4>
+              </div>
+              <div id="show_hide_is_kilos_check">
+                <h4><%= f.input :is_kilograms, label: "Enter weight in kilograms" %></h4>
+              </div>
+              <div id='show_me_the_pounds' class="hidden">
+                <p>
+                  <label>Pounds</label>
+                  <input id="inputPounds" type="number" placeholder="Pounds"> 
+                </p>
+                <p>= <span id="outputKilograms"></span>kilograms</p>
+              </div>
+              <div id='show_me_the_kilograms' class="hidden">
+                <input id="inputKilograms" type="number" placeholder="Kilograms">
+                <p>= <span id="outputPounds"></span> pounds</p>
+              </div>
+              <div class="hidden">
+                <%= f.input :pounds, input_html: { class: 'form-control form-control-sm hidden' } %>
+                <%= f.input :kilograms, input_html: { class: 'form-control form-control-sm hidden' } %> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='col'>
+          <div class="card border-dark">
+            <div class="card-header">Header</div>
+            <div class="card-body text-dark">
+              <div id="is_temp_control_check">
+                <h4><%= image_tag "hazardous.jpg" %><%= f.input :is_hazmat, label: "Load contains Hazardous Materials?" %> 
+                  <%= image_tag 'tempcontrol' %> 
+                  <%= f.input :needs_temp_control, label: "needs temperature control?" %>
+                </h4>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div id="is_fahrenheit_check" class="hidden">
+                <%= image_tag 'fahrenheit.jpg' %>
+                <h4><%= f.input :is_fahrenheit, label: "input fahrenheit?" %></h4>
+              </div>
+              <div id="is_celsius_check" class="hidden"> 
+                <%= image_tag 'celsius.jpg' %>
+                <h4><%= f.input :is_celsius, label: "input celsius?" %></h4>
+              </div>
+              <div id="celsius_input" class="hidden">
+                <input id="inputCelsius" type="number" placeholder="Celsius">
+                <p>= <span id="outputFahrenheit"></span> fahrenheit</p>
+              </div>
+              <div id="fahrenheit_input" class="hidden">
+                <input id="inputFahrenheit" type="number" placeholder="Fahrenheit">
+                <p>= <span id="outputCelsius"></span> celsius:</p>
+              </div>
+              <div class="hidden">
+                <%= f.input :celsius, input_html: { class: 'form-control form-control-sm' } %> 
+                <%= f.input :fahrenheit, input_html: { class: 'form-control form-control-sm' } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr class='hidden' id='origin-rows'>
+            <th>----</th>
+            <th>Pick Up Date</th>
+            <th>Shipper</th>
+            <th>#</th>
+            <th>Name</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody class='shipment_origins'>
+          <%= f.simple_fields_for :shipment_origins do |builder| %>
+          <%= render 'shipments/cocoon/new_shipment_origin_fields', f: builder %> 
+          <% end %>
+        </tbody>
+      </table>
+      <div class="form-actions">
+        <%= f.button :submit, class: "btn btn-outline-success float-right" %>
+        <%= link_to_add_association 'Add Origin Address', f, :shipment_origins, partial: 'shipments/cocoon/edit_shipment_origin_fields', class: 'btn btn-outline-info add_origin_address', id: 'add-address', data: { association_insertion_node: '.shipment_origins', association_insertion_method: :append } %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<%= link_to 'Back', shipments_path %>
+
+
+
+
+
+
+
