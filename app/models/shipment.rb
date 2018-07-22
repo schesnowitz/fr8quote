@@ -2,14 +2,14 @@ class Shipment < ApplicationRecord
 
   has_many :shipperizations
   has_many :shipper_receivers, through: :shipperizations
-  has_many :shipment_origins #, -> { order :origin_count }, dependent: :destroy 
+  has_many :shipment_origins, dependent: :destroy 
 
   accepts_nested_attributes_for :shipment_origins,
                                 allow_destroy: true
   accepts_nested_attributes_for :shipper_receivers,
                                 allow_destroy: true
                                 
-  # validates_associated :shipment_origins, presence: true
+  # validates_associated :shipment_origins, presence: true  
 
   Commodity =  
 [

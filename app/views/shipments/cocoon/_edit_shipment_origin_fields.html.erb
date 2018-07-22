@@ -6,12 +6,12 @@
     <%= f.date_field :origin_date, label: false, class: 'origin_date' %>
   </td>
   <td>
-    <span class='hide_drop hidden' id='hide_drop'>
+    <span class='hide_drop' id='hide_drop'>
     <%= select_tag "shipper_receivers", 
       options_for_select(@shipper_receivers.map{ |sr| [sr.name, sr.id, data: { url: shipper_receivers_path(sr) }]}), 
       class: 'chosen_origin_shipper_receivers', include_blank: "search shippers" %>
     </span>
-    <span class='hide_enter_manually hidden' id='hide_enter_manually'>
+    <span class='hide_enter_manually' id='hide_enter_manually'>
     <span class="badge badge-primary"><i class="zmdi zmdi-settings zmdi-hc-spin"></i> 
     <span class="origin_checkbox_text" id='origin_checkbox_text'>
     Can't find the shipper? <br> 
@@ -39,34 +39,35 @@
     </span>         
   </td>
   <td>
-    <span class='hide_count hidden' id='hide_count'>
+    <span class='hide_count' id='hide_count'>
     <%= f.input :origin_count, label: false, input_html: { class: 'origin_count' }, readonly: true %>
     </span>
   </td>
   <td>
-    <span class='hide_name hidden' id='hide_name'>
+    <span class='hide_name' id='hide_name'>
     <%= f.input :origin_name, label: false, input_html: { class: 'input_name' }, readonly: true  %>
     </span>
   </td>
   <td>
-    <span class='hide_street hidden' id='hide_street'>
+    <span class='hide_street' id='hide_street'>
     <%= f.input :origin_street, label: false, input_html: { class: 'input_street' }, readonly: true %>
     </span>
   </td>
   <td>
-    <span class='hide_city hidden' id='hide_city'>
+    <span class='hide_city' id='hide_city'>
     <%= f.input :origin_city, label: false, input_html: { class: 'input_city' }, readonly: true %>
     </span>
   </td>
   <td>
-    <span class='hide_state hidden' id='hide_state'>
+    <span class='hide_state' id='hide_state'>
     <%= f.input :origin_state, label: false, input_html: { class: 'input_state' }, readonly: true %>
     </span>
   </td>
   <td>
-    <span class='hide_zip hidden' id='hide_zip'>
+ 
+    <span class='hide_zip' id='hide_zip'>
     <%= f.input :origin_zip, label: false, input_html: { class: 'input_postal' }, readonly: true %>
     </span>
   </td>
 </tr>
-<%= javascript_include_tag 'edit_shipment_origins.js' %>  
+<%= javascript_include_tag 'edit_shipment_origins.js' %>

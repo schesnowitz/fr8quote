@@ -134,7 +134,7 @@
       </div>
       <table class="table table-hover">
         <thead>
-          <tr class='hidden' id='origin-rows'>
+          <tr class='' id='origin-rows'>
             <th>----</th>
             <th>Pick Up Date</th>
             <th>Shipper</th>
@@ -149,7 +149,7 @@
         </thead>
         <tbody class='shipment_origins'>
           <%= f.simple_fields_for :shipment_origins do |builder| %>
-          <%= render 'shipments/cocoon/new_shipment_origin_fields', f: builder %> 
+          <%= render 'shipments/cocoon/edit_shipment_origin_fields', f: builder %> 
           <% end %>
         </tbody>
       </table>
