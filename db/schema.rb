@@ -53,11 +53,13 @@ ActiveRecord::Schema.define(version: 2018_06_17_230713) do
     t.string "destination_zip"
     t.string "destination_contact_person"
     t.string "destination_notes"
-    t.integer "destination_shipment_id"
+    t.integer "shipment_id"
     t.integer "destination_count"
     t.string "destination_drop"
+    t.boolean "enter_manually", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["shipment_id"], name: "index_shipment_destinations_on_shipment_id"
   end
 
   create_table "shipment_origins", force: :cascade do |t|
