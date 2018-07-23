@@ -18,5 +18,4 @@ class ShipmentOrigin < ApplicationRecord
       sr.save
     end
   end
-
 end

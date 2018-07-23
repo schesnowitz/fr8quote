@@ -71,6 +71,7 @@ class ShipmentDestinationsController < ApplicationController
     def shipment_destination_params
       params.require(:shipment_destination).permit(
         :destination_date,
+        :destination_drop, 
         :destination_name, 
         :destination_street, 
         :destination_city, 
@@ -78,9 +79,9 @@ class ShipmentDestinationsController < ApplicationController
         :destination_zip, 
         :destination_contact_person, 
         :destination_notes, 
-        :shipment_id, 
+        :shipment_id,
         :destination_count,
-        :destination_drop
+        :enter_manually
         )
     end
 end

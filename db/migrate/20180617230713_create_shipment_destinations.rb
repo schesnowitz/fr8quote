@@ -9,10 +9,10 @@ class CreateShipmentDestinations < ActiveRecord::Migration[5.2]
       t.string :destination_zip
       t.string :destination_contact_person
       t.string :destination_notes
-      t.integer :destination_shipment_id
+      t.integer :shipment_id, index: true
       t.integer :destination_count
       t.string :destination_drop
-
+      t.boolean :enter_manually, default: false
       t.timestamps
     end
   end
