@@ -42,7 +42,7 @@ $(function() {
     postal_code = ($('#sr_postal_destination1').find("option:selected").text());
     $("#input_postal_destination1").val(postal_code); 
 
-    $("#destination_count1").val(2);
+    // $("#destination_count1").val(2);
   });
 
   // ---------------
@@ -64,7 +64,7 @@ $(function() {
     postal_code = ($('#sr_postal_destination2').find("option:selected").text());
     $("#input_postal_destination2").val(postal_code); 
 
-    $("#destination_count2").val(3);
+    // $("#destination_count2").val(3);
   });
   // ---------------
   $(document).on("change", "#chosen_destination_shipper_receivers3", function() {
@@ -85,7 +85,7 @@ $(function() {
     postal_code = ($('#sr_postal_destination3').find("option:selected").text());
     $("#input_postal_destination3").val(postal_code); 
 
-    $("#destination_count3").val(4);
+    // $("#destination_count3").val(4);
   });
   // ---------------
 
@@ -107,7 +107,7 @@ $(function() {
     postal_code = ($('#sr_postal_destination4').find("option:selected").text());
     $("#input_postal_destination4").val(postal_code); 
 
-    $("#destination_count4").val(5); 
+    // $("#destination_count4").val(5); 
   });
   // ---------------
 

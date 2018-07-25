@@ -1,121 +1,121 @@
 $(function() {
   // limits the number of categories
-  $(".chosen_origin_shipper_receivers").chosen();
+  $(".chosen_destination_shipper_receivers").chosen();
 
-    $(document).on("change", "#chosen_origin_shipper_receivers0", function() {
-      $('#sr_street0, #sr_city0, #sr_state0, #sr_postal0').val(this.value);   
+    $(document).on("change", "#chosen_destination_shipper_receivers0", function() {
+      $('#sr_street_destination0, #sr_city_destination0, #sr_state_destination0, #sr_postal_destination0').val(this.value);   
 
-    name = ($('#chosen_origin_shipper_receivers0').find("option:selected").text());
-    $("#input_name0").val(name);  
+    name = ($('#chosen_destination_shipper_receivers0').find("option:selected").text());
+    $("#input_name_destination0").val(name);  
 
-    street = ($('#sr_street0').find("option:selected").text());
-    $("#input_street0").val(street);
+    street = ($('#sr_street_destination0').find("option:selected").text());
+    $("#input_street_destination0").val(street);
 
-    city = ($('#sr_city0').find("option:selected").text());
-    $("#input_city0").val(city);
+    city = ($('#sr_city_destination0').find("option:selected").text());
+    $("#input_city_destination0").val(city);
 
-    state = ($('#sr_state0').find("option:selected").text());
-    $("#input_state0").val(state); 
+    state = ($('#sr_state_destination0').find("option:selected").text());
+    $("#input_state_destination0").val(state); 
 
-    postal_code = ($('#sr_postal0').find("option:selected").text());
-    $("#input_postal0").val(postal_code);
+    postal_code = ($('#sr_postal_destination0').find("option:selected").text());
+    $("#input_postal_destination0").val(postal_code);
 
     
   });
 
   // ---------------
-    $(document).on("change", "#chosen_origin_shipper_receivers1", function() {
-      $('#sr_street1, #sr_city1, #sr_state1, #sr_postal1').val(this.value);   
+    $(document).on("change", "#chosen_destination_shipper_receivers1", function() {
+      $('#sr_street_destination1, #sr_city_destination1, #sr_state_destination1, #sr_postal_destination1').val(this.value);   
 
-    name = ($('#chosen_origin_shipper_receivers1').find("option:selected").text());
-    $("#input_name1").val(name);  
+    name = ($('#chosen_destination_shipper_receivers1').find("option:selected").text());
+    $("#input_name_destination1").val(name);  
 
-    street = ($('#sr_street1').find("option:selected").text());
-    $("#input_street1").val(street);
+    street = ($('#sr_street_destination1').find("option:selected").text());
+    $("#input_street_destination1").val(street);
 
-    city = ($('#sr_city1').find("option:selected").text());
-    $("#input_city1").val(city);
+    city = ($('#sr_city_destination1').find("option:selected").text());
+    $("#input_city_destination1").val(city);
 
-    state = ($('#sr_state1').find("option:selected").text());
-    $("#input_state1").val(state); 
+    state = ($('#sr_state_destination1').find("option:selected").text());
+    $("#input_state_destination1").val(state); 
 
-    postal_code = ($('#sr_postal1').find("option:selected").text());
-    $("#input_postal1").val(postal_code); 
+    postal_code = ($('#sr_postal_destination1').find("option:selected").text());
+    $("#input_postal_destination1").val(postal_code); 
 
-    $("#origin_count1").val(2);
+    // $("#destination_count1").val(2);
   });
 
   // ---------------
-    $(document).on("change", "#chosen_origin_shipper_receivers2", function() {
-      $('#sr_street2, #sr_city2, #sr_state2, #sr_postal2').val(this.value);   
+    $(document).on("change", "#chosen_destination_shipper_receivers2", function() {
+      $('#sr_street_destination2, #sr_city_destination2, #sr_state_destination2, #sr_postal_destination2').val(this.value);   
 
-    name = ($('#chosen_origin_shipper_receivers2').find("option:selected").text());
-    $("#input_name2").val(name);  
+    name = ($('#chosen_destination_shipper_receivers2').find("option:selected").text());
+    $("#input_name_destination2").val(name);  
 
-    street = ($('#sr_street2').find("option:selected").text());
-    $("#input_street2").val(street);
+    street = ($('#sr_street_destination2').find("option:selected").text());
+    $("#input_street_destination2").val(street);
 
-    city = ($('#sr_city2').find("option:selected").text());
-    $("#input_city2").val(city);
+    city = ($('#sr_city_destination2').find("option:selected").text());
+    $("#input_city_destination2").val(city);
 
-    state = ($('#sr_state2').find("option:selected").text());
-    $("#input_state2").val(state); 
+    state = ($('#sr_state_destination2').find("option:selected").text());
+    $("#input_state_destination2").val(state); 
 
-    postal_code = ($('#sr_postal2').find("option:selected").text());
-    $("#input_postal2").val(postal_code); 
+    postal_code = ($('#sr_postal_destination2').find("option:selected").text());
+    $("#input_postal_destination2").val(postal_code); 
 
-    $("#origin_count2").val(3);
+    // $("#destination_count2").val(3);
   });
   // ---------------
-  $(document).on("change", "#chosen_origin_shipper_receivers3", function() {
-      $('#sr_street3, #sr_city3, #sr_state3, #sr_postal3').val(this.value);   
+  $(document).on("change", "#chosen_destination_shipper_receivers3", function() {
+      $('#sr_street_destination3, #sr_city_destination3, #sr_state_destination3, #sr_postal_destination3').val(this.value);   
 
-    name = ($('#chosen_origin_shipper_receivers3').find("option:selected").text());
-    $("#input_name3").val(name);  
+    name = ($('#chosen_destination_shipper_receivers3').find("option:selected").text());
+    $("#input_name_destination3").val(name);  
 
-    street = ($('#sr_street3').find("option:selected").text());
-    $("#input_street3").val(street);
+    street = ($('#sr_street_destination3').find("option:selected").text());
+    $("#input_street_destination3").val(street);
 
-    city = ($('#sr_city3').find("option:selected").text());
-    $("#input_city3").val(city);
+    city = ($('#sr_city_destination3').find("option:selected").text());
+    $("#input_city_destination3").val(city);
 
-    state = ($('#sr_state3').find("option:selected").text());
-    $("#input_state3").val(state); 
+    state = ($('#sr_state_destination3').find("option:selected").text());
+    $("#input_state_destination3").val(state); 
 
-    postal_code = ($('#sr_postal3').find("option:selected").text());
-    $("#input_postal3").val(postal_code); 
+    postal_code = ($('#sr_postal_destination3').find("option:selected").text());
+    $("#input_postal_destination3").val(postal_code); 
 
-    $("#origin_count3").val(4);
-  });
-  // ---------------
-
-  $(document).on("change", "#chosen_origin_shipper_receivers4", function() {
-      $('#sr_street4, #sr_city4, #sr_state4, #sr_postal4').val(this.value);   
-
-    name = ($('#chosen_origin_shipper_receivers4').find("option:selected").text());
-    $("#input_name4").val(name);  
-
-    street = ($('#sr_street4').find("option:selected").text());
-    $("#input_street4").val(street);
-
-    city = ($('#sr_city4').find("option:selected").text());
-    $("#input_city4").val(city);
-
-    state = ($('#sr_state4').find("option:selected").text());
-    $("#input_state4").val(state); 
-
-    postal_code = ($('#sr_postal4').find("option:selected").text());
-    $("#input_postal4").val(postal_code); 
-
-    $("#origin_count4").val(5); 
+    // $("#destination_count3").val(4);
   });
   // ---------------
 
+  $(document).on("change", "#chosen_destination_shipper_receivers4", function() {
+      $('#sr_street_destination4, #sr_city_destination4, #sr_state_destination4, #sr_postal_destination4').val(this.value);   
+
+    name = ($('#chosen_destination_shipper_receivers4').find("option:selected").text());
+    $("#input_name_destination4").val(name);  
+
+    street = ($('#sr_street_destination4').find("option:selected").text());
+    $("#input_street_destination4").val(street);
+
+    city = ($('#sr_city_destination4').find("option:selected").text());
+    $("#input_city_destination4").val(city);
+
+    state = ($('#sr_state_destination4').find("option:selected").text());
+    $("#input_state_destination4").val(state); 
+
+    postal_code = ($('#sr_postal_destination4').find("option:selected").text());
+    $("#input_postal_destination4").val(postal_code); 
+
+    // $("#destination_count4").val(5); 
+  });
+  // ---------------
+
 
   // ---------------
 
-  $( ".chosen_origin_shipper_receivers" ).each(function( i ) {
-  $(this).attr('id', 'chosen_origin_shipper_receivers' + i);
+  $( ".chosen_destination_shipper_receivers" ).each(function( i ) {
+  $(this).attr('id', 'chosen_destination_shipper_receivers' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
     var script=document.createElement('script');
     script.type='text/javascript';
@@ -123,213 +123,213 @@ $(function() {
     $(this).find('select').append(script);
   });
 
-  $( ".origin_count" ).each(function( i ) {
-  $(this).attr('id', 'origin_count' + i);
+  $( ".destination_count" ).each(function( i ) {
+  $(this).attr('id', 'destination_count' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
-    var origin_count = document.createElement('origin_count');
-    origin_count.type='text/javascript';
+    var destination_count = document.createElement('destination_count');
+    destination_count.type='text/javascript';
   // script.innerHTML=" alert('"+i+"');";
-    $(this).find('origin_count').append(origin_count);  
+    $(this).find('destination_count').append(destination_count);  
   });
 
-  $( ".sr_street" ).each(function( i ) {
-  $(this).attr('id', 'sr_street' + i);
+  $( ".sr_street_destination" ).each(function( i ) {
+  $(this).attr('id', 'sr_street_destination' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
-    var sr_street = document.createElement('sr_street');
-    sr_street.type='text/javascript';
+    var sr_street_destination = document.createElement('sr_street_destination');
+    sr_street_destination.type='text/javascript';
   // script.innerHTML=" alert('"+i+"');";
-    $(this).find('sr_street').append(sr_street); 
+    $(this).find('sr_street_destination').append(sr_street_destination); 
   });
 
-  $( ".sr_city" ).each(function( i ) {
-  $(this).attr('id', 'sr_city' + i);
+  $( ".sr_city_destination" ).each(function( i ) {
+  $(this).attr('id', 'sr_city_destination' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
-    var sr_city = document.createElement('sr_city');
-    sr_city.type='text/javascript';
+    var sr_city_destination = document.createElement('sr_city_destination');
+    sr_city_destination.type='text/javascript';
   // script.innerHTML=" alert('"+i+"');";
-    $(this).find('sr_city').append(sr_city); 
+    $(this).find('sr_city_destination').append(sr_city_destination); 
   });
 
-  $( ".sr_state" ).each(function( i ) {
-  $(this).attr('id', 'sr_state' + i);
+  $( ".sr_state_destination" ).each(function( i ) {
+  $(this).attr('id', 'sr_state_destination' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
-    var sr_state = document.createElement('sr_state');
-    sr_state.type='text/javascript';
+    var sr_state_destination = document.createElement('sr_state_destination');
+    sr_state_destination.type='text/javascript';
   // script.innerHTML=" alert('"+i+"');";
-    $(this).find('sr_state').append(sr_state); 
+    $(this).find('sr_state_destination').append(sr_state_destination); 
   });
 
-  $( ".sr_postal" ).each(function( i ) {
-  $(this).attr('id', 'sr_postal' + i);
+  $( ".sr_postal_destination" ).each(function( i ) {
+  $(this).attr('id', 'sr_postal_destination' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
-    var sr_postal = document.createElement('sr_postal');
-    sr_postal.type='text/javascript';
+    var sr_postal_destination = document.createElement('sr_postal_destination');
+    sr_postal_destination.type='text/javascript';
   // script.innerHTML=" alert('"+i+"');";
-    $(this).find('sr_postal').append(sr_postal); 
+    $(this).find('sr_postal_destination').append(sr_postal_destination); 
   });
 
-  $( ".input_name" ).each(function( i ) {
-  $(this).attr('id', 'input_name' + i);
+  $( ".input_name_destination" ).each(function( i ) {
+  $(this).attr('id', 'input_name_destination' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
     var script_name = document.createElement('script_name');
     script_name.type='text/javascript';
-    $(this).find('input_name').append(script_name); 
+    $(this).find('input_name_destination').append(script_name); 
   });
 
 
-  $( ".input_street" ).each(function( i ) {
-  $(this).attr('id', 'input_street' + i);
+  $( ".input_street_destination" ).each(function( i ) {
+  $(this).attr('id', 'input_street_destination' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
     var script_street = document.createElement('script_street');
     script_street.type='text/javascript';
-    $(this).find('input_street').append(script_street);
+    $(this).find('input_street_destination').append(script_street);
   });
 
-  $( ".input_city" ).each(function( i ) {
-  $(this).attr('id', 'input_city' + i);
+  $( ".input_city_destination" ).each(function( i ) {
+  $(this).attr('id', 'input_city_destination' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
     var script_city = document.createElement('script_city');
     script_city.type='text/javascript';
-    $(this).find('input_city').append(script_city);
+    $(this).find('input_city_destination').append(script_city);
   });
 
-  $( ".input_state" ).each(function( i ) {
-  $(this).attr('id', 'input_state' + i);
+  $( ".input_state_destination" ).each(function( i ) {
+  $(this).attr('id', 'input_state_destination' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
     var script_state = document.createElement('script_state');
     script_state.type='text/javascript';
-    $(this).find('input_state').append(script_state);
+    $(this).find('input_state_destination').append(script_state);
   });
 
-  $( ".input_postal" ).each(function( i ) {
-  $(this).attr('id', 'input_postal' + i);
+  $( ".input_postal_destination" ).each(function( i ) {
+  $(this).attr('id', 'input_postal_destination' + i);
   $(this).append('<select id=\"text' +i+'\"></select>');
     var script_postal = document.createElement('script_postal');
     script_postal.type='text/javascript';
-    $(this).find('input_postal').append(script_postal);
+    $(this).find('input_postal_destination').append(script_postal);
   });
 
   // -----------------------------
 
-    $( ".origin_checkbox_text" ).each(function( i ) {
-    $(this).attr('id', 'origin_checkbox_text' + i);
+    $( ".destination_checkbox_text" ).each(function( i ) {
+    $(this).attr('id', 'destination_checkbox_text' + i);
     $(this).append('<span id=\"text' +i+'\"></span>');
-      var origin_checkbox_text = document.createElement('origin_checkbox_text');
-      origin_checkbox_text.type='text/javascript';
+      var destination_checkbox_text = document.createElement('destination_checkbox_text');
+      destination_checkbox_text.type='text/javascript';
     // script.innerHTML=" alert('"+i+"');";
-      $(this).find('origin_checkbox_text').append(origin_checkbox_text);  
+      $(this).find('destination_checkbox_text').append(destination_checkbox_text);  
     });
 
 
-    $( ".origin_date" ).each(function( i ) {
-    $(this).attr('id', 'origin_date' + i);
+    $( ".destination_date" ).each(function( i ) {
+    $(this).attr('id', 'destination_date' + i);
     $(this).append('<select id=\"text' +i+'\"></select>');
-      var origin_date = document.createElement('origin_date');
-      origin_date.type='text/javascript';
-      $(this).find('origin_date').append(origin_date);
+      var destination_date = document.createElement('destination_date');
+      destination_date.type='text/javascript';
+      $(this).find('destination_date').append(destination_date);
     });
 
 
 
-    $( ".hide_enter_manually" ).each(function( i ) {
-      $(this).attr('id', 'hide_enter_manually' + i);
+    $( ".hide_enter_manually_destination" ).each(function( i ) {
+      $(this).attr('id', 'hide_enter_manually_destination' + i);
       $(this).append('<span id=\"text' +i+'\"></span>');
-        var hide_enter_manually = document.createElement('hide_enter_manually');
-        hide_enter_manually.type='text/javascript';
+        var hide_enter_manually_destination = document.createElement('hide_enter_manually_destination');
+        hide_enter_manually_destination.type='text/javascript';
       // script.innerHTML=" alert('"+i+"');";
-        $(this).find('hide_enter_manually').append(hide_enter_manually);   
+        $(this).find('hide_enter_manually_destination').append(hide_enter_manually_destination);   
       });
 
-    $( ".hide_drop" ).each(function( i ) {
-    $(this).attr('id', 'hide_drop' + i);
+    $( ".hide_drop_destination" ).each(function( i ) {
+    $(this).attr('id', 'hide_drop_destination' + i);
     $(this).append('<span id=\"text' +i+'\"></span>');
-      var hide_drop = document.createElement('hide_drop');
-      hide_drop.type='text/javascript';
+      var hide_drop_destination = document.createElement('hide_drop_destination');
+      hide_drop_destination.type='text/javascript';
     // script.innerHTML=" alert('"+i+"');";
-      $(this).find('hide_drop').append(hide_drop);   
+      $(this).find('hide_drop_destination').append(hide_drop_destination);   
     });
 
-    $( ".hide_count" ).each(function( i ) {
-    $(this).attr('id', 'hide_count' + i);
+    $( ".hide_count_destination" ).each(function( i ) {
+    $(this).attr('id', 'hide_count_destination' + i);
     $(this).append('<span id=\"text' +i+'\"></span>');
-      var hide_count = document.createElement('hide_count');
-      hide_count.type='text/javascript';
+      var hide_count_destination = document.createElement('hide_count_destination');
+      hide_count_destination.type='text/javascript';
     // script.innerHTML=" alert('"+i+"');";
-      $(this).find('hide_count').append(hide_count);  
+      $(this).find('hide_count_destination').append(hide_count_destination);  
     });
 
-    $( ".hide_name" ).each(function( i ) {
-    $(this).attr('id', 'hide_name' + i);
+    $( ".hide_name_destination" ).each(function( i ) {
+    $(this).attr('id', 'hide_name_destination' + i);
     $(this).append('<span id=\"text' +i+'\"></span>');
-      var hide_name = document.createElement('hide_name');
-      hide_name.type='text/javascript';
+      var hide_name_destination = document.createElement('hide_name_destination');
+      hide_name_destination.type='text/javascript';
     // script.innerHTML=" alert('"+i+"');";
-      $(this).find('hide_name').append(hide_name);  
+      $(this).find('hide_name_destination').append(hide_name_destination);  
     }); 
 
-    $( ".hide_street" ).each(function( i ) {
-    $(this).attr('id', 'hide_street' + i);
+    $( ".hide_street_destination" ).each(function( i ) {
+    $(this).attr('id', 'hide_street_destination' + i);
     $(this).append('<span id=\"text' +i+'\"></span>');
-      var hide_street = document.createElement('hide_street');
-      hide_street.type='text/javascript';
+      var hide_street_destination = document.createElement('hide_street_destination');
+      hide_street_destination.type='text/javascript';
     // script.innerHTML=" alert('"+i+"');";
-      $(this).find('hide_street').append(hide_street);  
+      $(this).find('hide_street_destination').append(hide_street_destination);  
     }); 
 
-    $( ".hide_city" ).each(function( i ) {
-    $(this).attr('id', 'hide_city' + i);
+    $( ".hide_city_destination" ).each(function( i ) {
+    $(this).attr('id', 'hide_city_destination' + i);
     $(this).append('<span id=\"text' +i+'\"></span>');
-      var hide_city = document.createElement('hide_city');
-      hide_city.type='text/javascript';
+      var hide_city_destination = document.createElement('hide_city_destination');
+      hide_city_destination.type='text/javascript';
     // script.innerHTML=" alert('"+i+"');";
-      $(this).find('hide_city').append(hide_city);  
+      $(this).find('hide_city_destination').append(hide_city_destination);  
     });
 
-    $( ".hide_state" ).each(function( i ) {
-    $(this).attr('id', 'hide_state' + i);
+    $( ".hide_state_destination" ).each(function( i ) {
+    $(this).attr('id', 'hide_state_destination' + i);
     $(this).append('<span id=\"text' +i+'\"></span>');
-      var hide_state = document.createElement('hide_state');
-      hide_state.type='text/javascript';
+      var hide_state_destination = document.createElement('hide_state_destination');
+      hide_state_destination.type='text/javascript';
     // script.innerHTML=" alert('"+i+"');";
-      $(this).find('hide_state').append(hide_state);  
+      $(this).find('hide_state_destination').append(hide_state_destination);  
     });
 
-    $( ".hide_zip" ).each(function( i ) {
-    $(this).attr('id', 'hide_zip' + i);
+    $( ".hide_zip_destination" ).each(function( i ) {
+    $(this).attr('id', 'hide_zip_destination' + i);
     $(this).append('<span id=\"text' +i+'\"></span>');
-      var hide_zip = document.createElement('hide_zip');
-      hide_zip.type='text/javascript';
+      var hide_zip_destination = document.createElement('hide_zip_destination');
+      hide_zip_destination.type='text/javascript';
     // script.innerHTML=" alert('"+i+"');";
-      $(this).find('hide_zip').append(hide_zip);  
+      $(this).find('hide_zip_destination').append(hide_zip_destination);  
     });  
 
 
   // -----------------------------
 
-  $('.shipment_origins').on('cocoon:after-insert', function() {
+  $('.shipment_destinations').on('cocoon:after-insert', function() {
     check_to_hide_or_show_add_link();
   });
 
-  $('.shipment_origins').on('cocoon:after-remove', function() {
+  $('.shipment_destinations').on('cocoon:after-remove', function() {
     check_to_hide_or_show_add_link();
   });
 
   check_to_hide_or_show_add_link();
 
   function check_to_hide_or_show_add_link() {
-    if ($('.shipment_origins .nested-fields').length == 5) {
-      $('.add_origin_address').hide();
+    if ($('.shipment_destinations .nested-fields').length == 5) {
+      $('.add_destination_address').hide();
     } else {
-      $('.add_origin_address').show();
+      $('.add_destination_address').show();
     }
   }
 })
 
 
-$(document).on("change", "#origin_date0", function() {
-  date = ($('#origin_date0').val());
+$(document).on("change", "#destination_date0", function() {
+  date = ($('#destination_date0').val());
   // alert(date);  
-  var ids0 = "#hide_count0, #hide_drop0, #hide_name0, #hide_street0, #hide_city0, #hide_state0, #hide_zip0, #origin-rows, #hide_enter_manually0"; 
+  var ids0 = "#hide_count_destination0, #hide_drop_destination0, #hide_name_destination0, #hide_street_destination0, #hide_city_destination0, #hide_state_destination0, #hide_zip_destination0, #destination-rows, #hide_enter_manually_destination0"; 
 
   if (date == '') { 
   $(ids0).addClass("hidden"); 
@@ -340,10 +340,10 @@ $(document).on("change", "#origin_date0", function() {
 
 
 
-  $(document).on("change", "#origin_date1", function() {
-   date = ($('#origin_date1').val());
+  $(document).on("change", "#destination_date1", function() {
+   date = ($('#destination_date1').val());
   // alert(date);  
-  var ids1 = "#hide_count1, #hide_drop1, #hide_name1, #hide_street1, #hide_city1, #hide_state1, #hide_zip1, #hide_enter_manually1";
+  var ids1 = "#hide_count_destination1, #hide_drop_destination1, #hide_name_destination1, #hide_street_destination1, #hide_city_destination1, #hide_state_destination1, #hide_zip_destination1, #hide_enter_manually_destination1";
 
   if (date == '') { 
   $(ids1).addClass("hidden"); 
@@ -352,10 +352,10 @@ $(document).on("change", "#origin_date0", function() {
   } 
 });
 
-  $(document).on("change", "#origin_date2", function() {
-   date = ($('#origin_date2').val());
+  $(document).on("change", "#destination_date2", function() {
+   date = ($('#destination_date2').val());
   // alert(date);  
-  var ids2 = "#hide_count2, #hide_drop2, #hide_name2, #hide_street2, #hide_city2, #hide_state2, #hide_zip2, #hide_enter_manually2";
+  var ids2 = "#hide_count_destination2, #hide_drop_destination2, #hide_name_destination2, #hide_street_destination2, #hide_city_destination2, #hide_state_destination2, #hide_zip_destination2, #hide_enter_manually_destination2";
 
   if (date == '') { 
   $(ids2).addClass("hidden"); 
@@ -364,10 +364,10 @@ $(document).on("change", "#origin_date0", function() {
   } 
 });
 
-  $(document).on("change", "#origin_date3", function() {
-   date = ($('#origin_date3').val());
+  $(document).on("change", "#destination_date3", function() {
+   date = ($('#destination_date3').val());
   // alert(date);  
-  var ids3 = "#hide_count3, #hide_drop3, #hide_name3, #hide_street3, #hide_city3, #hide_state3, #hide_zip3, #hide_enter_manually3";
+  var ids3 = "#hide_count_destination3, #hide_drop_destination3, #hide_name_destination3, #hide_street_destination3, #hide_city_destination3, #hide_state_destination3, #hide_zip_destination3, #hide_enter_manually_destination3";
 
   if (date == '') { 
   $(ids3).addClass("hidden"); 
@@ -377,10 +377,10 @@ $(document).on("change", "#origin_date0", function() {
 }); 
 
 
-  $(document).on("change", "#origin_date4", function() {
-   date = ($('#origin_date4').val());
+  $(document).on("change", "#destination_date4", function() {
+   date = ($('#destination_date4').val());
   // alert(date);  
-  var ids4 = "#hide_count4, #hide_drop4, #hide_name4, #hide_street4, #hide_city4, #hide_state4, #hide_zip4, #hide_enter_manually4";
+  var ids4 = "#hide_count_destination4, #hide_drop_destination4, #hide_name_destination4, #hide_street_destination4, #hide_city_destination4, #hide_state_destination4, #hide_zip_destination4, #hide_enter_manually_destination4";
 
   if (date == '') { 
   $(ids4).addClass("hidden"); 
@@ -401,7 +401,7 @@ $( ".enter_manually" ).each(function( i ) {
 
 // #enter_manually0 click
 $(function(){
-  ids_0 = '#input_name0, #input_street0, #input_city0, #input_state0,       #input_postal0' 
+  ids_0 = '#input_name_destination0, #input_street_destination0, #input_city_destination0, #input_state_destination0,       #input_postal_destination0' 
   $('#enter_manually0').click(function() {
       if($(this).is(':checked')) 
         $(ids_0).attr('readonly', false);
@@ -411,7 +411,7 @@ $(function(){
 });
 
 $(function(){
-  ids_0 = '#input_name0, #input_street0, #input_city0, #input_state0,       #input_postal0' 
+  ids_0 = '#input_name_destination0, #input_street_destination0, #input_city_destination0, #input_state_destination0,       #input_postal_destination0' 
   $('#enter_manually0').click(function() {
       if($(this).is(':checked')) 
         $(ids_0).val('');
@@ -423,25 +423,25 @@ $(function(){
 $(function(){
   $('#enter_manually0').click(function() {
       if($(this).is(':checked')) 
-        $( "#hide_drop0" ).addClass( "hidden" );
+        $( "#hide_drop_destination0" ).addClass( "hidden" );
       else
-        $( "#hide_drop0" ).removeClass( "hidden" );
+        $( "#hide_drop_destination0" ).removeClass( "hidden" );
   });
 });
 
 $(function(){
   $('#enter_manually0').click(function() {
       if($(this).is(':checked')) 
-        $( "#origin_checkbox_text0" ).html( "Enter the Shippers info." );
+        $( "#destination_checkbox_text0" ).html( "Enter the Shippers info." );
       else
-        $( "#origin_checkbox_text0" ).html( "Can't find the shipper?" + "<br>" +
+        $( "#destination_checkbox_text0" ).html( "Can't find the shipper?" + "<br>" +
         "Select to enter the info manually." );
   });
 
 });
 // #enter_manually1 click
 $(function(){
-  ids_1 = '#input_name1, #input_street1, #input_city1, #input_state1,       #input_postal1' 
+  ids_1 = '#input_name_destination1, #input_street_destination1, #input_city_destination1, #input_state_destination1,       #input_postal_destination1' 
   $('#enter_manually1').click(function() {
       if($(this).is(':checked')) 
         $(ids_1).attr('readonly', false);
@@ -451,7 +451,7 @@ $(function(){
 });
 
 $(function(){
-  ids_1 = '#input_name1, #input_street1, #input_city1, #input_state1,       #input_postal1' 
+  ids_1 = '#input_name_destination1, #input_street_destination1, #input_city_destination1, #input_state_destination1,       #input_postal_destination1' 
   $('#enter_manually1').click(function() {
       if($(this).is(':checked')) 
         $(ids_1).val('');
@@ -463,25 +463,25 @@ $(function(){
 $(function(){
   $('#enter_manually1').click(function() {
       if($(this).is(':checked')) 
-        $( "#hide_drop1" ).addClass( "hidden" );
+        $( "#hide_drop_destination1" ).addClass( "hidden" );
       else
-        $( "#hide_drop1" ).removeClass( "hidden" );
+        $( "#hide_drop_destination1" ).removeClass( "hidden" );
   });
 });
 
 $(function(){
   $('#enter_manually1').click(function() {
       if($(this).is(':checked')) 
-        $( "#origin_checkbox_text1" ).html( "Enter the Shippers info." );
+        $( "#destination_checkbox_text1" ).html( "Enter the Shippers info." );
       else
-        $( "#origin_checkbox_text1" ).html( "Can't find the shipper?" + "<br>" +
+        $( "#destination_checkbox_text1" ).html( "Can't find the shipper?" + "<br>" +
         "Select to enter the info manually." );
   });
 });
 
 // #enter_manually2
 $(function(){
-  ids_2 = '#input_name2, #input_street2, #input_city2, #input_state2,       #input_postal2' 
+  ids_2 = '#input_name_destination2, #input_street_destination2, #input_city_destination2, #input_state_destination2,       #input_postal_destination2' 
   $('#enter_manually2').click(function() {
       if($(this).is(':checked')) 
         $(ids_2).attr('readonly', false);
@@ -491,7 +491,7 @@ $(function(){
 });
 
 $(function(){
-  ids_2 = '#input_name2, #input_street2, #input_city2, #input_state2,       #input_postal2' 
+  ids_2 = '#input_name_destination2, #input_street_destination2, #input_city_destination2, #input_state_destination2,       #input_postal_destination2' 
   $('#enter_manually2').click(function() {
       if($(this).is(':checked')) 
         $(ids_2).val('');
@@ -503,24 +503,24 @@ $(function(){
 $(function(){
   $('#enter_manually2').click(function() {
       if($(this).is(':checked')) 
-        $( "#hide_drop2" ).addClass( "hidden" );
+        $( "#hide_drop_destination2" ).addClass( "hidden" );
       else
-        $( "#hide_drop2" ).removeClass( "hidden" );
+        $( "#hide_drop_destination2" ).removeClass( "hidden" );
   });
 });
 
 $(function(){
   $('#enter_manually2').click(function() {
       if($(this).is(':checked')) 
-        $( "#origin_checkbox_text2" ).html( "Enter the Shippers info." );
+        $( "#destination_checkbox_text2" ).html( "Enter the Shippers info." );
       else
-        $( "#origin_checkbox_text2" ).html( "Can't find the shipper?" + "<br>" +
+        $( "#destination_checkbox_text2" ).html( "Can't find the shipper?" + "<br>" +
         "Select to enter the info manually." );
   });
 });
 // #enter_manually3
 $(function(){
-  ids_3 = '#input_name3, #input_street3, #input_city3, #input_state3,       #input_postal3' 
+  ids_3 = '#input_name_destination3, #input_street_destination3, #input_city_destination3, #input_state_destination3,       #input_postal_destination3' 
   $('#enter_manually3').click(function() {
       if($(this).is(':checked')) 
         $(ids_3).attr('readonly', false);
@@ -529,7 +529,7 @@ $(function(){
   });
 });
 $(function(){
-  ids_3 = '#input_name3, #input_street3, #input_city3, #input_state3,       #input_postal3' 
+  ids_3 = '#input_name_destination3, #input_street_destination3, #input_city_destination3, #input_state_destination3,       #input_postal_destination3' 
   $('#enter_manually3').click(function() {
       if($(this).is(':checked')) 
         $(ids_3).val('');
@@ -540,24 +540,24 @@ $(function(){
 $(function(){
   $('#enter_manually3').click(function() {
       if($(this).is(':checked')) 
-        $( "#hide_drop3" ).addClass( "hidden" );
+        $( "#hide_drop_destination3" ).addClass( "hidden" );
       else
-        $( "#hide_drop3" ).removeClass( "hidden" );
+        $( "#hide_drop_destination3" ).removeClass( "hidden" );
   });
 });
 
 $(function(){
   $('#enter_manually3').click(function() {
       if($(this).is(':checked')) 
-        $( "#origin_checkbox_text3" ).html( "Enter the Shippers info." );
+        $( "#destination_checkbox_text3" ).html( "Enter the Shippers info." );
       else
-        $( "#origin_checkbox_text3" ).html( "Can't find the shipper?" + "<br>" +
+        $( "#destination_checkbox_text3" ).html( "Can't find the shipper?" + "<br>" +
         "Select to enter the info manually." );
   });
 });
 // #enter_manually4
 $(function(){
-  ids_4 = '#input_name4, #input_street4, #input_city4, #input_state4,       #input_postal4' 
+  ids_4 = '#input_name_destination4, #input_street_destination4, #input_city_destination4, #input_state_destination4,       #input_postal_destination4' 
   $('#enter_manually4').click(function() {
       if($(this).is(':checked')) 
         $(ids_4).attr('readonly', false);
@@ -566,7 +566,7 @@ $(function(){
   });
 });
 $(function(){
-  ids_4 = '#input_name4, #input_street4, #input_city4, #input_state4,       #input_postal4' 
+  ids_4 = '#input_name_destination4, #input_street_destination4, #input_city_destination4, #input_state_destination4,       #input_postal_destination4' 
   $('#enter_manually4').click(function() {
       if($(this).is(':checked')) 
         $(ids_4).val('');
@@ -577,75 +577,75 @@ $(function(){
 $(function(){
   $('#enter_manually4').click(function() {
       if($(this).is(':checked')) 
-        $( "#hide_drop4" ).addClass( "hidden" );
+        $( "#hide_drop_destination4" ).addClass( "hidden" );
       else
-        $( "#hide_drop4" ).removeClass( "hidden" );
+        $( "#hide_drop_destination4" ).removeClass( "hidden" );
   });
 });
 
 $(function(){
   $('#enter_manually4').click(function() {
       if($(this).is(':checked')) 
-        $( "#origin_checkbox_text4" ).html( "Enter the Shippers info." );
+        $( "#destination_checkbox_text4" ).html( "Enter the Shippers info." );
       else
-        $( "#origin_checkbox_text4" ).html( "Can't find the shipper?" + "<br>" +
+        $( "#destination_checkbox_text4" ).html( "Can't find the shipper?" + "<br>" +
         "Select to enter the info manually." );
   });
 });
 
-// if date present set the origin count field
-$(document).on("change", "#origin_date0", function() {
-  date = ($('#origin_date0').val());
+// if date present set the destination count field
+$(document).on("change", "#destination_date0", function() {
+  date = ($('#destination_date0').val());
 
 
   if (date == '') { 
-  $("#origin_count0").val(''); 
+  $("#destination_count0").val(''); 
   } else {
-  $("#origin_count0").val(1);
+  $("#destination_count0").val(1);
   } 
   });
 
-  $(document).on("change", "#origin_date1", function() {
-  date = ($('#origin_date1').val());
+  $(document).on("change", "#destination_date1", function() {
+  date = ($('#destination_date1').val());
 
 
   if (date == '') { 
-  $("#origin_count1").val(''); 
+  $("#destination_count1").val(''); 
   } else {
-  $("#origin_count1").val(2);
+  $("#destination_count1").val(2);
   } 
   });
 
-  $(document).on("change", "#origin_date2", function() {
-  date = ($('#origin_date2').val());
+  $(document).on("change", "#destination_date2", function() {
+  date = ($('#destination_date2').val());
 
 
   if (date == '') { 
-  $("#origin_count2").val(''); 
+  $("#destination_count2").val(''); 
   } else {
-  $("#origin_count2").val(3);
+  $("#destination_count2").val(3);
   } 
   });
 
-  $(document).on("change", "#origin_date3", function() {
-  date = ($('#origin_date3').val());
+  $(document).on("change", "#destination_date3", function() {
+  date = ($('#destination_date3').val());
 
  
   if (date == '') { 
-  $("#origin_count3").val(''); 
+  $("#destination_count3").val(''); 
   } else {
-  $("#origin_count3").val(4);
+  $("#destination_count3").val(4);
   } 
   });
 
-  $(document).on("change", "#origin_date4", function() {
-  date = ($('#origin_date4').val());
+  $(document).on("change", "#destination_date4", function() {
+  date = ($('#destination_date4').val());
 
 
   if (date == '') { 
-  $("#origin_count4").val(''); 
+  $("#destination_count4").val(''); 
   } else {
-  $("#origin_count4").val(5);
+  $("#destination_count4").val(5);
   } 
   });
-// end -- if date present set the origin count field
+// end -- if date present set the destination count field
