@@ -154,8 +154,32 @@
         </tbody>
       </table>
       <div class="form-actions">
-        <%= f.button :submit, class: "btn btn-outline-success float-right" %>
         <%= link_to_add_association 'Add Origin Address', f, :shipment_origins, partial: 'shipments/cocoon/new_shipment_origin_fields', class: 'btn btn-outline-info add_origin_address', id: 'add-address', data: { association_insertion_node: '.shipment_origins', association_insertion_method: :append } %>
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr class='hidden' id='destination-rows'> 
+            <th>----</th>
+            <th>Delivery Up Date</th>
+            <th>Receiver</th>
+            <th>#</th>
+            <th>Name</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>  
+        <tbody class='shipment_destinations'>
+          <%= f.simple_fields_for :shipment_destinations do |destination| %>
+          <%= render 'shipments/cocoon/new_shipment_destination_fields', f: destination %> 
+          <% end %>
+        </tbody>
+      </table>
+      <div class="form-actions">
+        <%= f.button :submit, class: "btn btn-outline-success float-right" %>
+        <%= link_to_add_association 'Add Destination Address', f, :shipment_destinations, partial: 'shipments/cocoon/new_shipment_destination_fields', class: 'btn btn-outline-info add_destination_address', id: 'add-address', data: { association_insertion_node: '.shipment_destinations', association_insertion_method: :append } %>
       </div>
     </div>
   </div>

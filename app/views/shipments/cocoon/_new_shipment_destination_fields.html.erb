@@ -1,0 +1,74 @@
+<tr class="nested-fields">
+  <td>
+    <%= link_to_remove_association "remove address", f, class: 'btn btn-outline-danger btn-xs' %>
+  </td>
+  <td>
+  <span><i class="zmdi zmdi-calendar"></i>
+      <strong> Delivery Up Date </strong></span><br>
+    <%= f.date_field :destination_date, label: false, class: 'destination_date' %>
+  </td>
+  <td>
+    <span class='hide_drop_destination hidden' id='hide_drop_destination'>
+    <%= select_tag "shipper_receivers", 
+      options_for_select(@shipper_receivers.map{ |sr| [sr.name, sr.id, data: { url: shipper_receivers_path(sr) }]}), 
+      class: 'chosen_destination_shipper_receivers', include_blank: "search shippers" %>
+    </span>
+    <span class='hide_enter_manually_destination hidden' id='hide_enter_manually_destination'>
+    <span class="badge badge-primary"><i class="zmdi zmdi-settings zmdi-hc-spin"></i> 
+    <span class="destination_checkbox_text" id='destination_checkbox_text'>
+    Can't find the shipper? <br> 
+    Select to enter the info manually. 
+    </span>
+    <br><br> <%= f.check_box :enter_manually, label: false,  class: 'enter_manually_destination'  %></span> 
+    </span> 
+    <br>
+    <span class='hidden'>
+    <%= select_tag "shipper_receivers", 
+      options_for_select(@shipper_receivers.map{ |sr| ["#{sr.street}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_street_destination", class: "sr_street_destination"
+      %>
+    <br>
+    <%= select_tag "shipper_receivers", 
+      options_for_select(@shipper_receivers.map{ |sr| ["#{sr.city}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_city_destination", class: "sr_city_destination"
+      %>
+    <br>    
+    <%= select_tag "shipper_receivers", 
+      options_for_select(@shipper_receivers.map{ |sr| ["#{sr.state}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_state_destination", class: "sr_state_destination"
+      %> 
+    <br>
+    <%= select_tag "shipper_receivers", 
+      options_for_select(@shipper_receivers.map{ |sr| ["#{sr.zip}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_postal_destination", class: "sr_postal_destination"
+      %>   
+    </span>         
+  </td>
+  <td>
+    <span class='hide_count_destination hidden' id='hide_count'>
+    <%= f.input :destination_count, label: false, input_html: { class: 'destination_count_destination' }, readonly: true %>
+    </span>
+  </td>
+  <td>
+    <span class='hide_name_destination hidden' id='hide_name_destination'>
+    <%= f.input :destination_name, label: false, input_html: { class: 'input_name_destination' }, readonly: true  %>
+    </span>
+  </td>
+  <td>
+    <span class='hide_street_destination hidden' id='hide_street_destination'>
+    <%= f.input :destination_street, label: false, input_html: { class: 'input_street_destination' }, readonly: true %>
+    </span>
+  </td>
+  <td>
+    <span class='hide_city_destination hidden' id='hide_city_destination'>
+    <%= f.input :destination_city, label: false, input_html: { class: 'input_city_destination' }, readonly: true %>
+    </span>
+  </td>
+  <td>
+    <span class='hide_state_destination hidden' id='hide_state_destination'>
+    <%= f.input :destination_state, label: false, input_html: { class: 'input_state' }, readonly: true %>
+    </span>
+  </td>
+  <td>
+    <span class='hide_zip_destination hidden' id='hide_zip_destination'>
+    <%= f.input :destination_zip, label: false, input_html: { class: 'input_postal_destination' }, readonly: true %>
+    </span>
+  </td>
+</tr>
+<%= javascript_include_tag 'new_shipment_destinations.js' %> 

@@ -231,13 +231,13 @@ $(function() {
 
 
 
-    $( ".hide_enter_manually_destination_destination" ).each(function( i ) {
-      $(this).attr('id', 'hide_enter_manually_destination_destination' + i);
+    $( ".hide_enter_manually_destination" ).each(function( i ) {
+      $(this).attr('id', 'hide_enter_manually_destination' + i);
       $(this).append('<span id=\"text' +i+'\"></span>');
-        var hide_enter_manually_destination_destination = document.createElement('hide_enter_manually_destination_destination');
-        hide_enter_manually_destination_destination.type='text/javascript';
+        var hide_enter_manually_destination = document.createElement('hide_enter_manually_destination');
+        hide_enter_manually_destination.type='text/javascript';
       // script.innerHTML=" alert('"+i+"');";
-        $(this).find('hide_enter_manually_destination_destination').append(hide_enter_manually_destination_destination);   
+        $(this).find('hide_enter_manually_destination').append(hide_enter_manually_destination);   
       });
 
     $( ".hide_drop_destination" ).each(function( i ) {
@@ -329,7 +329,7 @@ $(function() {
 $(document).on("change", "#destination_date0", function() {
   date = ($('#destination_date0').val());
   // alert(date);  
-  var ids0 = "#hide_count_destination0, #hide_drop_destination0, #hide_name_destination0, #hide_street_destination0, #hide_city_destination0, #hide_state_destination0, #hide_zip_destination0, #destination-rows, #hide_enter_manually_destination_destination0"; 
+  var ids0 = "#hide_count_destination0, #hide_drop_destination0, #hide_name_destination0, #hide_street_destination0, #hide_city_destination0, #hide_state_destination0, #hide_zip_destination0, #destination-rows, #hide_enter_manually_destination0"; 
 
   if (date == '') { 
   $(ids0).addClass("hidden"); 
@@ -343,7 +343,7 @@ $(document).on("change", "#destination_date0", function() {
   $(document).on("change", "#destination_date1", function() {
    date = ($('#destination_date1').val());
   // alert(date);  
-  var ids1 = "#hide_count_destination1, #hide_drop_destination1, #hide_name_destination1, #hide_street_destination1, #hide_city_destination1, #hide_state_destination1, #hide_zip_destination1, #hide_enter_manually_destination_destination1";
+  var ids1 = "#hide_count_destination1, #hide_drop_destination1, #hide_name_destination1, #hide_street_destination1, #hide_city_destination1, #hide_state_destination1, #hide_zip_destination1, #hide_enter_manually_destination1";
 
   if (date == '') { 
   $(ids1).addClass("hidden"); 
@@ -355,7 +355,7 @@ $(document).on("change", "#destination_date0", function() {
   $(document).on("change", "#destination_date2", function() {
    date = ($('#destination_date2').val());
   // alert(date);  
-  var ids2 = "#hide_count_destination2, #hide_drop_destination2, #hide_name_destination2, #hide_street_destination2, #hide_city_destination2, #hide_state_destination2, #hide_zip_destination2, #hide_enter_manually_destination_destination2";
+  var ids2 = "#hide_count_destination2, #hide_drop_destination2, #hide_name_destination2, #hide_street_destination2, #hide_city_destination2, #hide_state_destination2, #hide_zip_destination2, #hide_enter_manually_destination2";
 
   if (date == '') { 
   $(ids2).addClass("hidden"); 
@@ -367,7 +367,7 @@ $(document).on("change", "#destination_date0", function() {
   $(document).on("change", "#destination_date3", function() {
    date = ($('#destination_date3').val());
   // alert(date);  
-  var ids3 = "#hide_count_destination3, #hide_drop_destination3, #hide_name_destination3, #hide_street_destination3, #hide_city_destination3, #hide_state_destination3, #hide_zip_destination3, #hide_enter_manually_destination_destination3";
+  var ids3 = "#hide_count_destination3, #hide_drop_destination3, #hide_name_destination3, #hide_street_destination3, #hide_city_destination3, #hide_state_destination3, #hide_zip_destination3, #hide_enter_manually_destination3";
 
   if (date == '') { 
   $(ids3).addClass("hidden"); 
@@ -380,7 +380,7 @@ $(document).on("change", "#destination_date0", function() {
   $(document).on("change", "#destination_date4", function() {
    date = ($('#destination_date4').val());
   // alert(date);  
-  var ids4 = "#hide_count_destination4, #hide_drop_destination4, #hide_name_destination4, #hide_street_destination4, #hide_city_destination4, #hide_state_destination4, #hide_zip_destination4, #hide_enter_manually_destination_destination4";
+  var ids4 = "#hide_count_destination4, #hide_drop_destination4, #hide_name_destination4, #hide_street_destination4, #hide_city_destination4, #hide_state_destination4, #hide_zip_destination4, #hide_enter_manually_destination4";
 
   if (date == '') { 
   $(ids4).addClass("hidden"); 

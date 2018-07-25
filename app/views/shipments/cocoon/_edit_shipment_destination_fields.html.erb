@@ -1,0 +1,73 @@
+<tr class="nested-fields">
+  <td>
+    <%= link_to_remove_association "remove address", f, class: 'btn btn-outline-danger btn-xs' %>
+  </td>
+  <td>
+    <%= f.date_field :origin_date, label: false, class: 'origin_date' %>
+  </td>
+  <td>
+    <span class='hide_drop' id='hide_drop'>
+    <%= select_tag "shipper_receivers", 
+      options_for_select(@shipper_receivers.map{ |sr| [sr.name, sr.id, data: { url: shipper_receivers_path(sr) }]}), 
+      class: 'chosen_origin_shipper_receivers', include_blank: "search shippers" %>
+    </span>
+    <span class='hide_enter_manually' id='hide_enter_manually'>
+    <span class="badge badge-primary"><i class="zmdi zmdi-settings zmdi-hc-spin"></i> 
+    <span class="origin_checkbox_text" id='origin_checkbox_text'>
+    Can't find the shipper? <br> 
+    Select to enter the info manually. 
+    </span>
+    <br><br> <%= f.check_box :enter_manually, label: false,  class: 'enter_manually'  %></span> 
+    </span> 
+    <br>
+    <span class='hidden'>
+    <%= select_tag "shipper_receivers", 
+      options_for_select(@shipper_receivers.map{ |sr| ["#{sr.street}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_street", class: "sr_street"
+      %>
+    <br>
+    <%= select_tag "shipper_receivers", 
+      options_for_select(@shipper_receivers.map{ |sr| ["#{sr.city}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_city", class: "sr_city"
+      %>
+    <br>    
+    <%= select_tag "shipper_receivers", 
+      options_for_select(@shipper_receivers.map{ |sr| ["#{sr.state}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_state", class: "sr_state"
+      %> 
+    <br>
+    <%= select_tag "shipper_receivers", 
+      options_for_select(@shipper_receivers.map{ |sr| ["#{sr.zip}", sr.id, data: { url: shipper_receivers_path(sr) }]}), id: "sr_postal", class: "sr_postal"
+      %>   
+    </span>         
+  </td>
+  <td>
+    <span class='hide_count' id='hide_count'>
+    <%= f.input :origin_count, label: false, input_html: { class: 'origin_count' }, readonly: true %>
+    </span>
+  </td>
+  <td>
+    <span class='hide_name' id='hide_name'>
+    <%= f.input :origin_name, label: false, input_html: { class: 'input_name' }, readonly: true  %>
+    </span>
+  </td>
+  <td>
+    <span class='hide_street' id='hide_street'>
+    <%= f.input :origin_street, label: false, input_html: { class: 'input_street' }, readonly: true %>
+    </span>
+  </td>
+  <td>
+    <span class='hide_city' id='hide_city'>
+    <%= f.input :origin_city, label: false, input_html: { class: 'input_city' }, readonly: true %>
+    </span>
+  </td>
+  <td>
+    <span class='hide_state' id='hide_state'>
+    <%= f.input :origin_state, label: false, input_html: { class: 'input_state' }, readonly: true %>
+    </span>
+  </td>
+  <td>
+ 
+    <span class='hide_zip' id='hide_zip'>
+    <%= f.input :origin_zip, label: false, input_html: { class: 'input_postal' }, readonly: true %>
+    </span>
+  </td>
+</tr>
+<%= javascript_include_tag 'edit_shipment_origins.js' %>

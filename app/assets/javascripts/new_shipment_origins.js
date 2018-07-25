@@ -1,5 +1,5 @@
 $(function() {
-  // limits the number of categories
+
   $(".chosen_origin_shipper_receivers").chosen();
 
     $(document).on("change", "#chosen_origin_shipper_receivers0", function() {

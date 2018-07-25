@@ -3,9 +3,13 @@ class Shipment < ApplicationRecord
   has_many :shipperizations
   has_many :shipper_receivers, through: :shipperizations
   has_many :shipment_origins, dependent: :destroy 
-
   accepts_nested_attributes_for :shipment_origins,
+  allow_destroy: true
+
+  has_many :shipment_destinations, dependent: :destroy 
+  accepts_nested_attributes_for :shipment_destinations,
                                 allow_destroy: true
+
   accepts_nested_attributes_for :shipper_receivers,
                                 allow_destroy: true
                                 
